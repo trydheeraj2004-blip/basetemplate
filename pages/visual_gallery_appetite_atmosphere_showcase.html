@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual Gallery - Savory Haven | Appetite & Atmosphere Showcase</title>
+    <meta name="description" content="Explore our visual gallery showcasing culinary artistry, authentic dining atmosphere, and memorable guest celebrations. Discover the story behind every dish and moment at Savory Haven." />
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frestaurant1620back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 shadow-subtle">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                        <circle cx="20" cy="30" r="6" fill="currentColor" opacity="0.7"/>
+                    </svg>
+                    <h1 class="text-2xl font-playfair font-bold text-primary">Savory Haven</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage_culinary_storytelling_hub.html" class="text-text-secondary hover:text-primary transition-smooth">Home</a>
+                    <a href="interactive_menu_culinary_discovery_platform.html" class="text-text-secondary hover:text-primary transition-smooth">Menu</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-text-secondary hover:text-primary transition-smooth">Reservations</a>
+                    <a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Gallery</a>
+                    <a href="about_culinary_heritage_community_story.html" class="text-text-secondary hover:text-primary transition-smooth">About</a>
+                    <a href="events_private_dining_celebration_planning_hub.html" class="text-text-secondary hover:text-primary transition-smooth">Events</a>
+                    <a href="contact_hub_comprehensive_communication_center.html" class="text-text-secondary hover:text-primary transition-smooth">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="btn-primary">Reserve Now</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="pt-4 pb-2 space-y-3">
+                    <a href="homepage_culinary_storytelling_hub.html" class="block text-text-secondary">Home</a>
+                    <a href="interactive_menu_culinary_discovery_platform.html" class="block text-text-secondary">Menu</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="block text-text-secondary">Reservations</a>
+                    <a href="visual_gallery_appetite_atmosphere_showcase.html" class="block text-primary font-semibold">Gallery</a>
+                    <a href="about_culinary_heritage_community_story.html" class="block text-text-secondary">About</a>
+                    <a href="events_private_dining_celebration_planning_hub.html" class="block text-text-secondary">Events</a>
+                    <a href="contact_hub_comprehensive_communication_center.html" class="block text-text-secondary">Contact</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="btn-primary mt-4 inline-block">Reserve Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-16 px-6 bg-gradient-to-br from-primary-50 to-surface">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-playfair font-bold text-primary mb-6 text-fade-in">
+                Visual Gallery
+            </h1>
+            <p class="text-xl md:text-2xl font-crimson text-text-secondary mb-8 max-w-3xl mx-auto text-fade-in" style="animation-delay: 0.2s;">
+                Where culinary artistry meets authentic atmosphere - discover the stories behind every dish and moment
+            </p>
+            
+            <!-- Gallery Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8 text-fade-in" style="animation-delay: 0.4s;">
+                <button class="gallery-filter active px-6 py-3 rounded-full bg-primary text-white font-semibold transition-smooth" data-filter="all">
+                    All Gallery
+                </button>
+                <button class="gallery-filter px-6 py-3 rounded-full bg-surface text-text-primary hover:bg-primary hover:text-white font-semibold transition-smooth" data-filter="signature-dishes">
+                    Signature Dishes
+                </button>
+                <button class="gallery-filter px-6 py-3 rounded-full bg-surface text-text-primary hover:bg-primary hover:text-white font-semibold transition-smooth" data-filter="seasonal">
+                    Seasonal Menu
+                </button>
+                <button class="gallery-filter px-6 py-3 rounded-full bg-surface text-text-primary hover:bg-primary hover:text-white font-semibold transition-smooth" data-filter="behind-scenes">
+                    Behind the Scenes
+                </button>
+                <button class="gallery-filter px-6 py-3 rounded-full bg-surface text-text-primary hover:bg-primary hover:text-white font-semibold transition-smooth" data-filter="celebrations">
+                    Guest Celebrations
+                </button>
+                <button class="gallery-filter px-6 py-3 rounded-full bg-surface text-text-primary hover:bg-primary hover:text-white font-semibold transition-smooth" data-filter="atmosphere">
+                    Restaurant Atmosphere
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-16 px-6 bg-background">
+        <div class="max-w-7xl mx-auto">
+            <!-- Masonry Grid -->
+            <div class="gallery-grid columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+                
+                <!-- Signature Dishes -->
+                <div class="gallery-item signature-dishes break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal1')">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Pan-seared duck breast with cherry gastrique" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Pan-Seared Duck Breast</h3>
+                            <p class="text-sm opacity-90">Cherry gastrique, roasted root vegetables</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Signature
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item seasonal break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal2')">
+                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Autumn harvest salad with butternut squash" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Autumn Harvest Salad</h3>
+                            <p class="text-sm opacity-90">Roasted butternut squash, candied pecans, pomegranate</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Seasonal
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item behind-scenes break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal3')">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Chef preparing fresh pasta in kitchen" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Fresh Pasta Making</h3>
+                            <p class="text-sm opacity-90">Hand-rolled daily in our kitchen</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Behind Scenes
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item celebrations break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal4')">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Anniversary celebration dinner setup" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Anniversary Celebration</h3>
+                            <p class="text-sm opacity-90">Creating unforgettable moments</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Celebration
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item signature-dishes break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal5')">
+                        <img src="https://images.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_1280.jpg" alt="Grilled salmon with herb crust" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Herb-Crusted Salmon</h3>
+                            <p class="text-sm opacity-90">Wild-caught, sustainably sourced</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Signature
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item atmosphere break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal6')">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Elegant dining room with warm lighting" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Intimate Dining Room</h3>
+                            <p class="text-sm opacity-90">Warm ambiance for special occasions</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Atmosphere
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item seasonal break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal7')">
+                        <img src="https://images.pixabay.com/photo/2016/08/11/08/04/vegetables-1584999_1280.jpg" alt="Winter root vegetable medley" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Winter Root Vegetables</h3>
+                            <p class="text-sm opacity-90">Locally sourced, seasonally inspired</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Seasonal
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item behind-scenes break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal8')">
+                        <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chef plating signature dessert" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Dessert Artistry</h3>
+                            <p class="text-sm opacity-90">Precision and passion in every plate</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Behind Scenes
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item celebrations break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal9')">
+                        <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Birthday celebration with custom cake" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Birthday Celebration</h3>
+                            <p class="text-sm opacity-90">Custom cakes and memorable moments</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Celebration
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item atmosphere break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal10')">
+                        <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Seasonal holiday decorations" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=800&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Holiday Atmosphere</h3>
+                            <p class="text-sm opacity-90">Seasonal transformations throughout the year</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Atmosphere
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item signature-dishes break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal11')">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Artisanal cheese and charcuterie board" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Artisanal Cheese Board</h3>
+                            <p class="text-sm opacity-90">Curated selection of local and imported cheeses</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Signature
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item seasonal break-inside-avoid mb-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-card hover:shadow-interactive transition-all duration-300 cursor-pointer" onclick="openModal('modal12')">
+                        <img src="https://images.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_1280.jpg" alt="Spring asparagus with lemon vinaigrette" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=800&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
+                            <h3 class="text-lg font-playfair font-bold mb-1">Spring Asparagus</h3>
+                            <p class="text-sm opacity-90">First harvest of the season</p>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Seasonal
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="btn-primary px-8 py-4" id="load-more-btn">
+                    Load More Images
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Integration -->
+    <section class="py-20 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4">Live from Our Kitchen</h2>
+                <p class="text-xl text-text-secondary">Follow our daily culinary journey on social media</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Instagram Feed Simulation -->
+                <div class="bg-background rounded-2xl p-6 shadow-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-primary">@savoryhaven</p>
+                            <p class="text-sm text-text-secondary">2 hours ago</p>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Fresh ingredients prep" class="w-full h-48 object-cover rounded-lg mb-4" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    <p class="text-text-primary mb-3">Fresh ingredients arriving for tonight's special menu! 🌿✨</p>
+                    <div class="flex items-center justify-between text-sm text-text-secondary">
+                        <span>❤️ 127 likes</span>
+                        <span>💬 12 comments</span>
+                    </div>
+                </div>
+
+                <div class="bg-background rounded-2xl p-6 shadow-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-primary">@savoryhaven</p>
+                            <p class="text-sm text-text-secondary">5 hours ago</p>
+                        </div>
+                    </div>
+                    <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Chef at work" class="w-full h-48 object-cover rounded-lg mb-4" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                    <p class="text-text-primary mb-3">Behind the scenes: Chef Marco perfecting tonight's signature dish 👨‍🍳</p>
+                    <div class="flex items-center justify-between text-sm text-text-secondary">
+                        <span>❤️ 89 likes</span>
+                        <span>💬 8 comments</span>
+                    </div>
+                </div>
+
+                <div class="bg-background rounded-2xl p-6 shadow-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-primary">@savoryhaven</p>
+                            <p class="text-sm text-text-secondary">1 day ago</p>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Happy guests" class="w-full h-48 object-cover rounded-lg mb-4" onerror="this.src='https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    <p class="text-text-primary mb-3">Celebrating 25 years of love! Thank you for choosing us for your special moments 💕</p>
+                    <div class="flex items-center justify-between text-sm text-text-secondary">
+                        <span>❤️ 156 likes</span>
+                        <span>💬 23 comments</span>
+                    </div>
+                </div>
+
+                <div class="bg-background rounded-2xl p-6 shadow-card">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-primary">@savoryhaven</p>
+                            <p class="text-sm text-text-secondary">2 days ago</p>
+                        </div>
+                    </div>
+                    <img src="https://images.pixabay.com/photo/2016/08/11/08/04/vegetables-1584999_1280.jpg" alt="Seasonal vegetables" class="w-full h-48 object-cover rounded-lg mb-4" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400&auto=format&fit=crop'; this.onerror=null;" />
+                    <p class="text-text-primary mb-3">Farm-fresh vegetables from our local partners. Taste the difference! 🥕🌽</p>
+                    <div class="flex items-center justify-between text-sm text-text-secondary">
+                        <span>❤️ 94 likes</span>
+                        <span>💬 15 comments</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="btn-secondary px-8 py-4">Follow Us on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-6 bg-primary text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-4">Ready to Create Your Own Memory?</h2>
+            <p class="text-xl mb-8 opacity-90">Experience the artistry and atmosphere that makes every meal at Savory Haven unforgettable</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="smart_reservations_intelligent_booking_ecosystem.html" class="btn-accent text-lg px-8 py-4">Reserve Your Table</a>
+                <a href="interactive_menu_culinary_discovery_platform.html" class="bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold transition-smooth">Explore Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="currentColor">
+                            <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                            <circle cx="20" cy="30" r="6" fill="currentColor" opacity="0.7"/>
+                        </svg>
+                        <h3 class="text-2xl font-playfair font-bold">Savory Haven</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">Where every meal becomes a memory. Experience culinary excellence and warm hospitality in the heart of our neighborhood.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-playfair font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="interactive_menu_culinary_discovery_platform.html" class="text-gray-300 hover:text-accent transition-smooth">Menu</a></li>
+                        <li><a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-gray-300 hover:text-accent transition-smooth">Reservations</a></li>
+                        <li><a href="events_private_dining_celebration_planning_hub.html" class="text-gray-300 hover:text-accent transition-smooth">Private Dining</a></li>
+                        <li><a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-gray-300 hover:text-accent transition-smooth">Gallery</a></li>
+                        <li><a href="about_culinary_heritage_community_story.html" class="text-gray-300 hover:text-accent transition-smooth">Our Story</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-playfair font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            123 Culinary Street, Foodie District
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            (555) 123-FOOD
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            hello@savoryhaven.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Savory Haven. All Rights Reserved. | Crafted with passion for exceptional dining experiences.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl max-h-full">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white hover:text-accent text-2xl z-10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <div id="modalContent" class="bg-white rounded-2xl overflow-hidden shadow-interactive max-h-full overflow-y-auto">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gallery filter functionality
+        const filterButtons = document.querySelectorAll('.gallery-filter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-primary', 'text-white');
+                    btn.classList.add('bg-surface', 'text-text-primary');
+                });
+                this.classList.add('active', 'bg-primary', 'text-white');
+                this.classList.remove('bg-surface', 'text-text-primary');
+                
+                // Filter gallery items
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        function openModal(modalId) {
+            const modal = document.getElementById('imageModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            // Modal content data
+            const modalData = {
+                modal1: {
+                    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3',
+                    title: 'Pan-Seared Duck Breast',
+                    description: 'Our signature duck breast is sourced from local farms and prepared with a cherry gastrique that perfectly balances sweet and tart flavors. Served alongside roasted root vegetables and finished with fresh herbs.',
+                    ingredients: 'Duck breast, cherry gastrique, carrots, parsnips, fresh thyme',
+                    preparation: 'Pan-seared to perfection and finished in the oven',
+                    pairing: 'Recommended with our Pinot Noir selection'
+                },
+                modal2: {
+                    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                    title: 'Autumn Harvest Salad',
+                    description: 'A celebration of fall flavors featuring roasted butternut squash, candied pecans, and pomegranate seeds over mixed greens with our house-made maple vinaigrette.',
+                    ingredients: 'Mixed greens, butternut squash, candied pecans, pomegranate, maple vinaigrette',
+                    preparation: 'Squash roasted daily, pecans candied in-house',
+                    pairing: 'Perfect with our Chardonnay or Riesling'
+                }
+                // Add more modal data as needed
+            };
+            
+            const data = modalData[modalId] || modalData.modal1;
+            
+            modalContent.innerHTML = `
+                <div class="md:flex">
+                    <div class="md:w-2/3">
+                        <img src="${data.image}" alt="${data.title}" class="w-full h-64 md:h-96 object-cover">
+                    </div>
+                    <div class="md:w-1/3 p-6">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-4">${data.title}</h3>
+                        <p class="text-text-primary mb-4">${data.description}</p>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-primary mb-1">Ingredients:</h4>
+                                <p class="text-sm text-text-secondary">${data.ingredients}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary mb-1">Preparation:</h4>
+                                <p class="text-sm text-text-secondary">${data.preparation}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary mb-1">Wine Pairing:</h4>
+                                <p class="text-sm text-text-secondary">${data.pairing}</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 space-y-3">
+                            <a href="smart_reservations_intelligent_booking_ecosystem.html" class="btn-primary w-full text-center block">Reserve to Try This</a>
+                            <button onclick="shareImage('${data.title}')" class="btn-secondary w-full">Share This Dish</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function shareImage(title) {
+            if (navigator.share) {
+                navigator.share({
+                    title: `${title} at Savory Haven`,
+                    text: `Check out this amazing dish at Savory Haven!`,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const url = window.location.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Link copied to clipboard!');
+                });
+            }
+        }
+
+        // Load more functionality
+        document.getElementById('load-more-btn').addEventListener('click', function() {
+            // Simulate loading more images
+            this.textContent = 'Loading...';
+            setTimeout(() => {
+                this.textContent = 'Load More Images';
+                alert('More images loaded! (This is a demo)');
+            }, 1000);
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-background');
+                nav.classList.remove('bg-background/95');
+            } else {
+                nav.classList.remove('bg-background');
+                nav.classList.add('bg-background/95');
+            }
+        });
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+    </script>
+</body>
+</html>

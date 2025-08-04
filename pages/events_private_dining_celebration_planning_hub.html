@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & Private Dining - Savory Haven</title>
+    <meta name="description" content="Create unforgettable celebrations at Savory Haven. Private dining rooms, custom menus, and professional event coordination for anniversaries, birthdays, corporate events, and special occasions." />
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frestaurant1620back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 shadow-subtle">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                        <circle cx="20" cy="30" r="6" fill="currentColor" opacity="0.7"/>
+                    </svg>
+                    <h1 class="text-2xl font-playfair font-bold text-primary">Savory Haven</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage_culinary_storytelling_hub.html" class="text-text-secondary hover:text-primary transition-smooth">Home</a>
+                    <a href="interactive_menu_culinary_discovery_platform.html" class="text-text-secondary hover:text-primary transition-smooth">Menu</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-text-secondary hover:text-primary transition-smooth">Reservations</a>
+                    <a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-text-secondary hover:text-primary transition-smooth">Gallery</a>
+                    <a href="about_culinary_heritage_community_story.html" class="text-text-secondary hover:text-primary transition-smooth">About</a>
+                    <a href="events_private_dining_celebration_planning_hub.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Events</a>
+                    <a href="contact_hub_comprehensive_communication_center.html" class="text-text-secondary hover:text-primary transition-smooth">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#consultation-booking" class="btn-primary">Plan Your Event</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="pt-4 pb-2 space-y-3">
+                    <a href="homepage_culinary_storytelling_hub.html" class="block text-text-secondary">Home</a>
+                    <a href="interactive_menu_culinary_discovery_platform.html" class="block text-text-secondary">Menu</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="block text-text-secondary">Reservations</a>
+                    <a href="visual_gallery_appetite_atmosphere_showcase.html" class="block text-text-secondary">Gallery</a>
+                    <a href="about_culinary_heritage_community_story.html" class="block text-text-secondary">About</a>
+                    <a href="events_private_dining_celebration_planning_hub.html" class="block text-primary font-semibold">Events</a>
+                    <a href="contact_hub_comprehensive_communication_center.html" class="block text-text-secondary">Contact</a>
+                    <a href="#consultation-booking" class="btn-primary mt-4 inline-block">Plan Your Event</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Elegant private dining room setup for special celebration" class="w-full h-full object-cover" loading="eager" onerror="this.src='https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=2940'; this.onerror=null;" />
+        </div>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/50"></div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 h-full flex items-center justify-center text-center px-6">
+            <div class="max-w-4xl mx-auto text-white">
+                <h1 class="text-5xl md:text-7xl font-playfair font-bold mb-6 text-fade-in">
+                    Celebrate Life's<br />
+                    <span class="text-accent">Special Moments</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-crimson mb-8 text-fade-in opacity-90" style="animation-delay: 0.2s;">
+                    From intimate anniversaries to grand celebrations, we create unforgettable experiences tailored to your vision
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center text-fade-in" style="animation-delay: 0.4s;">
+                    <a href="#consultation-booking" class="btn-primary text-lg px-8 py-4">Start Planning</a>
+                    <a href="#private-spaces" class="btn-secondary text-lg px-8 py-4">View Spaces</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Celebration Inspiration -->
+    <section class="py-20 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4">Celebration Inspiration</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">Every occasion deserves a memorable setting. Discover how we can make your special moment extraordinary.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Anniversary Dinners -->
+                <div class="card group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Romantic anniversary dinner setup with candles" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Romantic
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-3">Anniversary Dinners</h3>
+                    <p class="text-text-secondary mb-4">Intimate celebrations with champagne service, custom menu selections, and romantic ambiance for your special milestone.</p>
+                    <ul class="text-sm text-text-secondary space-y-1 mb-4">
+                        <li>• Private corner table</li>
+                        <li>• Champagne toast</li>
+                        <li>• Custom dessert presentation</li>
+                    </ul>
+                    <a href="#consultation-booking" class="text-secondary font-semibold hover:text-secondary-600 transition-smooth">Plan Anniversary →</a>
+                </div>
+                
+                <!-- Birthday Parties -->
+                <div class="card group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.pixabay.com/photo/2016/11/23/15/48/audience-1853662_1280.jpg" alt="Birthday celebration with friends and family" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Celebration
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-3">Birthday Parties</h3>
+                    <p class="text-text-secondary mb-4">Joyful gatherings with group dining options, custom cake presentations, and festive atmosphere for all ages.</p>
+                    <ul class="text-sm text-text-secondary space-y-1 mb-4">
+                        <li>• Group seating arrangements</li>
+                        <li>• Custom birthday dessert</li>
+                        <li>• Special dietary accommodations</li>
+                    </ul>
+                    <a href="#consultation-booking" class="text-secondary font-semibold hover:text-secondary-600 transition-smooth">Plan Birthday →</a>
+                </div>
+                
+                <!-- Business Entertainment -->
+                <div class="card group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Professional business dinner meeting" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Professional
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-3">Business Entertainment</h3>
+                    <p class="text-text-secondary mb-4">Professional dining experiences with private spaces, presentation capabilities, and impeccable service standards.</p>
+                    <ul class="text-sm text-text-secondary space-y-1 mb-4">
+                        <li>• Private dining rooms</li>
+                        <li>• AV equipment available</li>
+                        <li>• Professional service</li>
+                    </ul>
+                    <a href="#consultation-booking" class="text-secondary font-semibold hover:text-secondary-600 transition-smooth">Plan Meeting →</a>
+                </div>
+                
+                <!-- Holiday Gatherings -->
+                <div class="card group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Holiday family gathering dinner table" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.pixabay.com/photo/2016/11/18/14/05/brick-1834784_1280.jpg'; this.onerror=null;" />
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Seasonal
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-3">Holiday Gatherings</h3>
+                    <p class="text-text-secondary mb-4">Festive celebrations with seasonal menus, family-style service, and warm holiday atmosphere for memorable traditions.</p>
+                    <ul class="text-sm text-text-secondary space-y-1 mb-4">
+                        <li>• Seasonal menu options</li>
+                        <li>• Family-style service</li>
+                        <li>• Holiday decorations</li>
+                    </ul>
+                    <a href="#consultation-booking" class="text-secondary font-semibold hover:text-secondary-600 transition-smooth">Plan Holiday →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Dining Spaces -->
+    <section id="private-spaces" class="py-20 px-6 bg-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4">Private Dining Spaces</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">Exclusive venues within our restaurant, each designed to create the perfect atmosphere for your celebration</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- The Garden Room -->
+                <div class="bg-surface rounded-2xl overflow-hidden shadow-card">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="The Garden Room private dining space" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=2940'; this.onerror=null;" />
+                        <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Most Popular
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-4">The Garden Room</h3>
+                        <p class="text-text-secondary mb-6">Our signature private dining space featuring floor-to-ceiling windows overlooking our herb garden, creating an intimate connection with nature.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-primary mb-2">Capacity & Features</h4>
+                                <ul class="text-sm text-text-secondary space-y-1">
+                                    <li>• Seats up to 16 guests</li>
+                                    <li>• Natural lighting</li>
+                                    <li>• Garden views</li>
+                                    <li>• Climate controlled</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary mb-2">Technology & Service</h4>
+                                <ul class="text-sm text-text-secondary space-y-1">
+                                    <li>• Wireless presentation system</li>
+                                    <li>• Dedicated service team</li>
+                                    <li>• Custom lighting control</li>
+                                    <li>• Sound system available</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-sm text-text-secondary">Starting from</span>
+                                <p class="text-2xl font-bold text-accent">$75 <span class="text-sm font-normal">per person</span></p>
+                            </div>
+                            <a href="#consultation-booking" class="btn-primary">Book Garden Room</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- The Wine Cellar -->
+                <div class="bg-surface rounded-2xl overflow-hidden shadow-card">
+                    <div class="relative h-64">
+                        <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=2940" alt="The Wine Cellar intimate dining space" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Intimate
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-4">The Wine Cellar</h3>
+                        <p class="text-text-secondary mb-6">An intimate underground space surrounded by our wine collection, perfect for romantic dinners and small celebrations with a sophisticated atmosphere.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-primary mb-2">Capacity & Features</h4>
+                                <ul class="text-sm text-text-secondary space-y-1">
+                                    <li>• Seats up to 8 guests</li>
+                                    <li>• Wine cellar ambiance</li>
+                                    <li>• Stone archway entrance</li>
+                                    <li>• Temperature controlled</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary mb-2">Wine & Service</h4>
+                                <ul class="text-sm text-text-secondary space-y-1">
+                                    <li>• Sommelier wine pairings</li>
+                                    <li>• Private wine tastings</li>
+                                    <li>• Candlelit atmosphere</li>
+                                    <li>• Personalized service</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-sm text-text-secondary">Starting from</span>
+                                <p class="text-2xl font-bold text-accent">$95 <span class="text-sm font-normal">per person</span></p>
+                            </div>
+                            <a href="#consultation-booking" class="btn-secondary">Book Wine Cellar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Spaces -->
+            <div class="mt-12 grid md:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Chef's Table</h3>
+                    <p class="text-text-secondary mb-4">Exclusive 6-seat experience with direct kitchen views and chef interaction</p>
+                    <p class="text-accent font-semibold">$125 per person</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Boardroom</h3>
+                    <p class="text-text-secondary mb-4">Professional space for 12 with presentation equipment and business amenities</p>
+                    <p class="text-accent font-semibold">$65 per person</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Patio Pavilion</h3>
+                    <p class="text-text-secondary mb-4">Outdoor covered space for 20 with garden views and seasonal availability</p>
+                    <p class="text-accent font-semibold">$55 per person</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebration Packages -->
+    <section class="py-20 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4">Celebration Packages</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">Curated experiences designed for life's most important moments</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Romance Package -->
+                <div class="bg-background rounded-2xl p-8 shadow-card hover:shadow-interactive transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-2">Romance Package</h3>
+                        <p class="text-text-secondary">Perfect for anniversaries, proposals, and intimate celebrations</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Private corner table with garden views</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Champagne toast and rose petals</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Four-course tasting menu for two</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Custom dessert with personal message</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Complimentary celebration photo</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-primary mb-4">$185 <span class="text-lg font-normal text-text-secondary">for two</span></p>
+                        <a href="#consultation-booking" class="btn-accent w-full">Book Romance Package</a>
+                    </div>
+                </div>
+                
+                <!-- Celebration Package -->
+                <div class="bg-background rounded-2xl p-8 shadow-card hover:shadow-interactive transition-all duration-300 border-2 border-primary">
+                    <div class="text-center mb-6">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                            Most Popular
+                        </div>
+                        <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 mt-4">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-2">Celebration Package</h3>
+                        <p class="text-text-secondary">Ideal for birthdays, graduations, and milestone celebrations</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Semi-private dining area for up to 12</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Welcome cocktail for each guest</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Three-course celebration menu</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Custom celebration cake or dessert</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Dedicated server and event coordination</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-primary mb-4">$85 <span class="text-lg font-normal text-text-secondary">per person</span></p>
+                        <a href="#consultation-booking" class="btn-primary w-full">Book Celebration Package</a>
+                    </div>
+                </div>
+                
+                <!-- Corporate Package -->
+                <div class="bg-background rounded-2xl p-8 shadow-card hover:shadow-interactive transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-2">Corporate Package</h3>
+                        <p class="text-text-secondary">Professional dining for business meetings and team events</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Private boardroom for up to 16</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">AV equipment and presentation setup</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Business lunch or dinner menu</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Wine pairings by our sommelier</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="w-5 h-5 text-secondary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-text-secondary">Professional service and discretion</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-3xl font-bold text-primary mb-4">$95 <span class="text-lg font-normal text-text-secondary">per person</span></p>
+                        <a href="#consultation-booking" class="btn-secondary w-full">Book Corporate Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-20 px-6 bg-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4">Celebration Success Stories</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">Real moments, real joy - see how we've helped create unforgettable memories</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Testimonial 1 -->
+                <div class="bg-surface rounded-2xl p-8 shadow-card">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Sarah and Michael anniversary celebration" class="w-16 h-16 rounded-full object-cover mr-4" onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=200'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-playfair font-bold text-primary text-lg">Sarah & Michael</h4>
+                            <p class="text-text-secondary">25th Anniversary Celebration</p>
+                        </div>
+                    </div>
+                    <p class="text-text-primary font-crimson text-lg mb-6">"The Garden Room was absolutely perfect for our silver anniversary. The staff went above and beyond to make our evening special - from the champagne toast to the surprise dessert with our wedding photo. Every detail was thoughtfully planned, and our guests are still talking about the incredible food and service."</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex text-accent">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <span class="text-text-secondary text-sm">Garden Room • 14 Guests</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-surface rounded-2xl p-8 shadow-card">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="David corporate event host" class="w-16 h-16 rounded-full object-cover mr-4" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-playfair font-bold text-primary text-lg">David Chen</h4>
+                            <p class="text-text-secondary">Corporate Team Celebration</p>
+                        </div>
+                    </div>
+                    <p class="text-text-primary font-crimson text-lg mb-6">"We needed a professional yet warm environment for our quarterly team dinner, and Savory Haven delivered perfectly. The Boardroom setup was ideal for our presentation, and the service was seamless. Our team loved the wine pairings, and several clients have asked about hosting their own events here."</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex text-accent">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <span class="text-text-secondary text-sm">Boardroom • 12 Guests</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Success Metrics -->
+            <div class="mt-16 grid md:grid-cols-4 gap-8 text-center">
+                <div class="card">
+                    <div class="text-3xl font-bold text-primary mb-2">500+</div>
+                    <p class="text-text-secondary">Celebrations Hosted</p>
+                </div>
+                <div class="card">
+                    <div class="text-3xl font-bold text-primary mb-2">98%</div>
+                    <p class="text-text-secondary">Guest Satisfaction</p>
+                </div>
+                <div class="card">
+                    <div class="text-3xl font-bold text-primary mb-2">15+</div>
+                    <p class="text-text-secondary">Years of Experience</p>
+                </div>
+                <div class="card">
+                    <div class="text-3xl font-bold text-primary mb-2">24hr</div>
+                    <p class="text-text-secondary">Event Coordination</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Booking -->
+    <section id="consultation-booking" class="py-20 px-6 bg-primary text-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-4">Plan Your Perfect Celebration</h2>
+                <p class="text-xl opacity-90">Let our event coordinator help you create an unforgettable experience tailored to your vision and budget</p>
+            </div>
+            
+            <form class="bg-white rounded-2xl p-8 text-text-primary shadow-interactive">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Your Name *</label>
+                        <input type="text" class="form-input" placeholder="Enter your full name" required />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Email Address *</label>
+                        <input type="email" class="form-input" placeholder="your@email.com" required />
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Phone Number</label>
+                        <input type="tel" class="form-input" placeholder="(555) 123-4567" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Event Date</label>
+                        <input type="date" class="form-input" required />
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Event Type *</label>
+                        <select class="form-input" required>
+                            <option value>Select event type</option>
+                            <option value="anniversary">Anniversary Dinner</option>
+                            <option value="birthday">Birthday Celebration</option>
+                            <option value="business">Business Entertainment</option>
+                            <option value="holiday">Holiday Gathering</option>
+                            <option value="proposal">Proposal/Engagement</option>
+                            <option value="graduation">Graduation Party</option>
+                            <option value="other">Other Special Occasion</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Number of Guests *</label>
+                        <select class="form-input" required>
+                            <option value>Select guest count</option>
+                            <option value="2">2 guests (Intimate)</option>
+                            <option value="4-6">4-6 guests (Small group)</option>
+                            <option value="8-12">8-12 guests (Medium group)</option>
+                            <option value="14-16">14-16 guests (Large group)</option>
+                            <option value="18+">18+ guests (Custom arrangement)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Preferred Space</label>
+                        <select class="form-input">
+                            <option value>No preference</option>
+                            <option value="garden-room">The Garden Room</option>
+                            <option value="wine-cellar">The Wine Cellar</option>
+                            <option value="chefs-table">Chef's Table</option>
+                            <option value="boardroom">Boardroom</option>
+                            <option value="patio-pavilion">Patio Pavilion</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-primary mb-2">Budget Range</label>
+                        <select class="form-input">
+                            <option value>Prefer to discuss</option>
+                            <option value="under-500">Under $500</option>
+                            <option value="500-1000">$500 - $1,000</option>
+                            <option value="1000-2000">$1,000 - $2,000</option>
+                            <option value="2000-5000">$2,000 - $5,000</option>
+                            <option value="over-5000">Over $5,000</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-primary mb-2">Special Requests & Dietary Accommodations</label>
+                    <textarea class="form-input h-32 resize-none" placeholder="Tell us about any special dietary needs, allergies, decoration preferences, or other requests that will help us create your perfect celebration..."></textarea>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-primary mb-2">Preferred Contact Method</label>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="contact-method" value="email" class="mr-2" />
+                            <span>Email</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="contact-method" value="phone" class="mr-2" />
+                            <span>Phone Call</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="contact-method" value="text" class="mr-2" />
+                            <span>Text Message</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn-accent text-lg px-12 py-4">Request Consultation</button>
+                    <p class="text-sm text-text-secondary mt-4">Our event coordinator will contact you within 24 hours to discuss your celebration details</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="currentColor">
+                            <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                            <circle cx="20" cy="30" r="6" fill="currentColor" opacity="0.7"/>
+                        </svg>
+                        <h3 class="text-2xl font-playfair font-bold">Savory Haven</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">Where every meal becomes a memory. Experience culinary excellence and warm hospitality in the heart of our neighborhood.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-playfair font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="interactive_menu_culinary_discovery_platform.html" class="text-gray-300 hover:text-accent transition-smooth">Menu</a></li>
+                        <li><a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-gray-300 hover:text-accent transition-smooth">Reservations</a></li>
+                        <li><a href="events_private_dining_celebration_planning_hub.html" class="text-gray-300 hover:text-accent transition-smooth">Private Dining</a></li>
+                        <li><a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-gray-300 hover:text-accent transition-smooth">Gallery</a></li>
+                        <li><a href="about_culinary_heritage_community_story.html" class="text-gray-300 hover:text-accent transition-smooth">Our Story</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-playfair font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            123 Culinary Street, Foodie District
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            (555) 123-FOOD
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            hello@savoryhaven.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Savory Haven. All Rights Reserved. | Crafted with passion for exceptional dining experiences.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-background');
+                nav.classList.remove('bg-background/95');
+            } else {
+                nav.classList.remove('bg-background');
+                nav.classList.add('bg-background/95');
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const eventType = formData.get('event-type') || 'celebration';
+            const guestCount = formData.get('guest-count') || 'group';
+            
+            // Show success message
+            alert(`Thank you for your consultation request! Our event coordinator will contact you within 24 hours to discuss your ${eventType} for ${guestCount}. We're excited to help create your perfect celebration at Savory Haven.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Dynamic form interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const eventTypeSelect = document.querySelector('select[name="event-type"]');
+            const guestCountSelect = document.querySelector('select[name="guest-count"]');
+            const spaceSelect = document.querySelector('select[name="space"]');
+            
+            // Update space recommendations based on guest count
+            if (guestCountSelect && spaceSelect) {
+                guestCountSelect.addEventListener('change', function() {
+                    const guestCount = this.value;
+                    const spaceOptions = spaceSelect.querySelectorAll('option');
+                    
+                    spaceOptions.forEach(option => {
+                        if (option.value === '') return; // Skip default option
+                        
+                        // Show/hide options based on capacity
+                        if (guestCount === '2' || guestCount === '4-6') {
+                            if (option.value === 'wine-cellar' || option.value === 'chefs-table') {
+                                option.style.display = 'block';
+                            }
+                        } else if (guestCount === '8-12') {
+                            if (option.value === 'garden-room' || option.value === 'boardroom') {
+                                option.style.display = 'block';
+                            }
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

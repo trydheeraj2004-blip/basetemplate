@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Story - Savory Haven | Culinary Heritage & Community Connection</title>
+    <meta name="description" content="Discover the passionate story behind Savory Haven - from our chef's culinary journey to our commitment to community, sustainability, and exceptional dining experiences that create lasting memories." />
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frestaurant1620back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 shadow-subtle">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                        <circle cx="20" cy="30" r="6" fill="currentColor" opacity="0.7"/>
+                    </svg>
+                    <h1 class="text-2xl font-playfair font-bold text-primary">Savory Haven</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage_culinary_storytelling_hub.html" class="text-text-secondary hover:text-primary transition-smooth">Home</a>
+                    <a href="interactive_menu_culinary_discovery_platform.html" class="text-text-secondary hover:text-primary transition-smooth">Menu</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-text-secondary hover:text-primary transition-smooth">Reservations</a>
+                    <a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-text-secondary hover:text-primary transition-smooth">Gallery</a>
+                    <a href="about_culinary_heritage_community_story.html" class="text-primary font-semibold border-b-2 border-primary pb-1">About</a>
+                    <a href="events_private_dining_celebration_planning_hub.html" class="text-text-secondary hover:text-primary transition-smooth">Events</a>
+                    <a href="contact_hub_comprehensive_communication_center.html" class="text-text-secondary hover:text-primary transition-smooth">Contact</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="btn-primary">Reserve Now</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-btn">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="pt-4 pb-2 space-y-3">
+                    <a href="homepage_culinary_storytelling_hub.html" class="block text-text-secondary">Home</a>
+                    <a href="interactive_menu_culinary_discovery_platform.html" class="block text-text-secondary">Menu</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="block text-text-secondary">Reservations</a>
+                    <a href="visual_gallery_appetite_atmosphere_showcase.html" class="block text-text-secondary">Gallery</a>
+                    <a href="about_culinary_heritage_community_story.html" class="block text-primary font-semibold">About</a>
+                    <a href="events_private_dining_celebration_planning_hub.html" class="block text-text-secondary">Events</a>
+                    <a href="contact_hub_comprehensive_communication_center.html" class="block text-text-secondary">Contact</a>
+                    <a href="smart_reservations_intelligent_booking_ecosystem.html" class="btn-primary mt-4 inline-block">Reserve Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-20 px-6 bg-surface overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                <defs>
+                    <pattern id="grain" patternUnits="userSpaceOnUse" width="4" height="4">
+                        <rect width="4" height="4" fill="currentColor" opacity="0.1"/>
+                        <circle cx="2" cy="2" r="0.5" fill="currentColor" opacity="0.2"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grain)" class="text-primary"/>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-playfair font-bold text-primary mb-6 text-fade-in">
+                    Our Culinary Story
+                </h1>
+                <p class="text-xl md:text-2xl font-crimson text-text-secondary max-w-3xl mx-auto text-fade-in" style="animation-delay: 0.2s;">
+                    Where passion meets tradition, and every dish tells the story of our community, our values, and our commitment to exceptional dining experiences.
+                </p>
+            </div>
+            
+            <!-- Story Navigation -->
+            <div class="flex flex-wrap justify-center gap-4 text-fade-in" style="animation-delay: 0.4s;">
+                <a href="#chef-story" class="btn-secondary">Chef's Journey</a>
+                <a href="#philosophy" class="btn-accent">Our Philosophy</a>
+                <a href="#community" class="btn-primary">Community Impact</a>
+                <a href="#team" class="btn-secondary">Meet Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef's Story Section -->
+    <section id="chef-story" class="py-20 px-6 bg-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Chef Image -->
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-2xl shadow-interactive">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Chef Marcus Thompson in the kitchen" class="w-full h-96 object-cover" onerror="this.src='https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-sm font-semibold mb-1">Executive Chef & Owner</p>
+                            <p class="text-2xl font-playfair font-bold">Marcus Thompson</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Achievement Card -->
+                    <div class="absolute -bottom-8 -right-8 bg-accent text-white p-6 rounded-2xl shadow-interactive max-w-xs">
+                        <div class="flex items-center mb-2">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            <span class="font-semibold">15+ Years</span>
+                        </div>
+                        <p class="text-sm">Culinary Excellence</p>
+                    </div>
+                </div>
+                
+                <!-- Chef's Story Content -->
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-4xl font-playfair font-bold text-primary mb-6">The Journey Behind the Passion</h2>
+                        <p class="text-lg text-text-secondary mb-4 font-crimson">
+                            My culinary journey began in my grandmother's kitchen in New Orleans, where I learned that food is more than sustenance—it's love, memory, and connection. After training at the Culinary Institute of America and working in renowned kitchens across the country, I discovered my true calling: creating a neighborhood restaurant where exceptional cuisine meets genuine hospitality.
+                        </p>
+                        <p class="text-lg text-text-secondary mb-6 font-crimson">
+                            Savory Haven represents everything I've learned about the transformative power of food. From my early days as a line cook in Charleston to my role as sous chef at a Michelin-starred restaurant in San Francisco, each experience shaped my understanding that great dining is about more than technique—it's about creating moments that matter.
+                        </p>
+                    </div>
+                    
+                    <!-- Credentials -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-surface rounded-lg p-6">
+                            <h3 class="text-xl font-playfair font-bold text-primary mb-3">Education & Training</h3>
+                            <ul class="space-y-2 text-text-secondary">
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Culinary Institute of America
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    ServSafe Certified Manager
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Wine & Spirits Education Trust
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-surface rounded-lg p-6">
+                            <h3 class="text-xl font-playfair font-bold text-primary mb-3">Professional Experience</h3>
+                            <ul class="space-y-2 text-text-secondary">
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    Michelin-starred Restaurant, SF
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    James Beard Nominated Kitchen
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                    Charleston Fine Dining Scene
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="py-20 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">Our Culinary Philosophy</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto font-crimson">
+                    At Savory Haven, we believe that exceptional dining is built on three fundamental pillars: seasonal excellence, community connection, and sustainable practices.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Seasonal Excellence -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-600 transition-smooth">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-4">Seasonal Excellence</h3>
+                    <p class="text-text-secondary font-crimson">
+                        We craft our menus around the natural rhythm of seasons, celebrating peak flavors when ingredients are at their absolute best. This approach ensures every dish reflects the moment and honors the land that provides for us.
+                    </p>
+                </div>
+                
+                <!-- Community Connection -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary-600 transition-smooth">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-4">Community Connection</h3>
+                    <p class="text-text-secondary font-crimson">
+                        Our restaurant serves as a gathering place where neighbors become friends and celebrations become memories. We're not just feeding bodies—we're nourishing relationships and strengthening community bonds.
+                    </p>
+                </div>
+                
+                <!-- Sustainable Practices -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent-600 transition-smooth">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-bold text-primary mb-4">Sustainable Practices</h3>
+                    <p class="text-text-secondary font-crimson">
+                        Environmental stewardship guides every decision, from sourcing ingredients within 50 miles to composting kitchen waste. We believe great food should nurture both people and planet for generations to come.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Philosophy Quote -->
+            <div class="bg-primary text-white rounded-2xl p-12 text-center">
+                <blockquote class="text-2xl md:text-3xl font-playfair font-bold mb-6">
+                    "Great food is a universal language that speaks to the heart. At Savory Haven, we're fluent in creating moments that matter."
+                </blockquote>
+                <cite class="text-lg font-crimson opacity-90">— Chef Marcus Thompson</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Suppliers Section -->
+    <section class="py-20 px-6 bg-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">Our Trusted Partners</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto font-crimson">
+                    Behind every exceptional dish are the dedicated farmers, artisans, and producers who share our commitment to quality and sustainability.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Heritage Farm -->
+                <div class="card group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.pixabay.com/photo/2016/08/11/08/04/vegetables-1584999_1280.jpg" alt="Heritage Farm organic vegetables" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            20 Miles Away
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-3">Heritage Farm</h3>
+                    <p class="text-text-secondary mb-4 font-crimson">
+                        Our primary vegetable supplier, Heritage Farm has been practicing organic farming for three generations. Their heirloom tomatoes and seasonal greens form the foundation of our garden-fresh dishes.
+                    </p>
+                    <div class="flex items-center text-sm text-secondary">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                        Organic Certified • Family Owned
+                    </div>
+                </div>
+                
+                <!-- Coastal Catch -->
+                <div class="card group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh seafood from Coastal Catch" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+                        <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Daily Delivery
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-3">Coastal Catch Fishery</h3>
+                    <p class="text-text-secondary mb-4 font-crimson">
+                        Sustainable seafood sourced directly from local fishing boats. Their commitment to responsible fishing practices ensures we serve the freshest catch while protecting marine ecosystems.
+                    </p>
+                    <div class="flex items-center text-sm text-secondary">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                        </svg>
+                        Sustainable • Ocean-to-Table
+                    </div>
+                </div>
+                
+                <!-- Artisan Bakery -->
+                <div class="card group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-lg mb-6">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Artisan bread from local bakery" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Handcrafted
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-3">Golden Grain Bakery</h3>
+                    <p class="text-text-secondary mb-4 font-crimson">
+                        Traditional sourdough and artisan breads baked fresh daily using heritage grains. Their commitment to time-honored techniques creates the perfect foundation for our signature dishes.
+                    </p>
+                    <div class="flex items-center text-sm text-secondary">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        Heritage Grains • Daily Fresh
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">Meet Our Culinary Team</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto font-crimson">
+                    Behind every memorable meal is a passionate team dedicated to excellence, creativity, and genuine hospitality.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Sous Chef -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-full w-32 h-32 mx-auto mb-6">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Sous Chef Elena Rodriguez" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Elena Rodriguez</h3>
+                    <p class="text-secondary font-semibold mb-3">Sous Chef</p>
+                    <p class="text-text-secondary text-sm font-crimson">
+                        Specializing in Mediterranean techniques with 8 years of fine dining experience. Elena's passion for pasta and seafood brings authentic flavors to our seasonal menu.
+                    </p>
+                </div>
+                
+                <!-- Sommelier -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-full w-32 h-32 mx-auto mb-6">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Sommelier David Chen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">David Chen</h3>
+                    <p class="text-secondary font-semibold mb-3">Head Sommelier</p>
+                    <p class="text-text-secondary text-sm font-crimson">
+                        Certified sommelier with expertise in natural wines and local vineyards. David curates our wine program to perfectly complement Chef Marcus's seasonal creations.
+                    </p>
+                </div>
+                
+                <!-- Pastry Chef -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-full w-32 h-32 mx-auto mb-6">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Pastry Chef Sarah Williams" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Sarah Williams</h3>
+                    <p class="text-secondary font-semibold mb-3">Pastry Chef</p>
+                    <p class="text-text-secondary text-sm font-crimson">
+                        French-trained pastry chef who creates stunning desserts using seasonal fruits and artisanal chocolates. Her creations are the perfect finale to every meal.
+                    </p>
+                </div>
+                
+                <!-- Front of House Manager -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-full w-32 h-32 mx-auto mb-6">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Front of House Manager Michael Torres" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold text-primary mb-2">Michael Torres</h3>
+                    <p class="text-secondary font-semibold mb-3">Front of House Manager</p>
+                    <p class="text-text-secondary text-sm font-crimson">
+                        Hospitality veteran with 12 years of experience creating memorable dining experiences. Michael ensures every guest feels welcomed and valued from arrival to departure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Impact Section -->
+    <section id="community" class="py-20 px-6 bg-background">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">Community Impact</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto font-crimson">
+                    We believe great restaurants strengthen communities. Here's how we're making a difference beyond our dining room.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+                <!-- Community Initiatives -->
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-playfair font-bold text-primary mb-2">Local Food Bank Partnership</h3>
+                            <p class="text-text-secondary font-crimson">
+                                Every month, we donate surplus ingredients and prepared meals to the neighborhood food bank, helping ensure no one in our community goes hungry. Last year, we contributed over 2,000 meals.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-playfair font-bold text-primary mb-2">Sustainability Initiatives</h3>
+                            <p class="text-text-secondary font-crimson">
+                                Our comprehensive composting program diverts 95% of kitchen waste from landfills. We've also eliminated single-use plastics and source 80% of ingredients within 50 miles of the restaurant.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-playfair font-bold text-primary mb-2">Culinary Education Program</h3>
+                            <p class="text-text-secondary font-crimson">
+                                We host monthly cooking classes for local youth, teaching basic culinary skills and nutrition education. Our scholarship program has helped three students pursue culinary careers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Community Image -->
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-2xl shadow-interactive">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Community event at Savory Haven" class="w-full h-96 object-cover" onerror="this.src='https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-sm font-semibold mb-1">Community Gathering</p>
+                            <p class="text-lg font-crimson">"Bringing neighbors together through food"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="py-20 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">Recognition & Awards</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto font-crimson">
+                    While awards don't define us, we're honored to be recognized for our commitment to culinary excellence and community service.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Best Neighborhood Restaurant -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-playfair font-bold text-primary mb-2">Best Neighborhood Restaurant</h3>
+                    <p class="text-text-secondary text-sm mb-2">City Food & Wine Awards</p>
+                    <p class="text-accent font-semibold">2024</p>
+                </div>
+                
+                <!-- Sustainability Champion -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-playfair font-bold text-primary mb-2">Sustainability Champion</h3>
+                    <p class="text-text-secondary text-sm mb-2">Green Restaurant Association</p>
+                    <p class="text-accent font-semibold">2024</p>
+                </div>
+                
+                <!-- Community Service Award -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-playfair font-bold text-primary mb-2">Community Service Award</h3>
+                    <p class="text-text-secondary text-sm mb-2">Chamber of Commerce</p>
+                    <p class="text-accent font-semibold">2023</p>
+                </div>
+                
+                <!-- Rising Star Chef -->
+                <div class="card text-center group hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-playfair font-bold text-primary mb-2">Rising Star Chef</h3>
+                    <p class="text-text-secondary text-sm mb-2">Regional Culinary Guild</p>
+                    <p class="text-accent font-semibold">2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-6 bg-primary text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6">Experience Our Story</h2>
+            <p class="text-xl mb-8 opacity-90 font-crimson">
+                Now that you know our story, we'd love to welcome you to our table and create new memories together.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="smart_reservations_intelligent_booking_ecosystem.html" class="btn-accent text-lg px-8 py-4">Reserve Your Table</a>
+                <a href="interactive_menu_culinary_discovery_platform.html" class="btn-secondary text-lg px-8 py-4">Explore Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="currentColor">
+                            <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                            <circle cx="20" cy="30" r="6" fill="currentColor" opacity="0.7"/>
+                        </svg>
+                        <h3 class="text-2xl font-playfair font-bold">Savory Haven</h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">Where every meal becomes a memory. Experience culinary excellence and warm hospitality in the heart of our neighborhood.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accent rounded-full flex items-center justify-center hover:bg-accent-600 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-playfair font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="interactive_menu_culinary_discovery_platform.html" class="text-gray-300 hover:text-accent transition-smooth">Menu</a></li>
+                        <li><a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-gray-300 hover:text-accent transition-smooth">Reservations</a></li>
+                        <li><a href="events_private_dining_celebration_planning_hub.html" class="text-gray-300 hover:text-accent transition-smooth">Private Dining</a></li>
+                        <li><a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-gray-300 hover:text-accent transition-smooth">Gallery</a></li>
+                        <li><a href="about_culinary_heritage_community_story.html" class="text-gray-300 hover:text-accent transition-smooth">Our Story</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-playfair font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            123 Culinary Street, Foodie District
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            (555) 123-FOOD
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            hello@savoryhaven.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Savory Haven. All Rights Reserved. | Crafted with passion for exceptional dining experiences.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-background');
+                nav.classList.remove('bg-background/95');
+            } else {
+                nav.classList.remove('bg-background');
+                nav.classList.add('bg-background/95');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('text-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
