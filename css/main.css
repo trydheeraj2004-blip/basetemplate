@@ -2382,3 +2382,29 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-item {
     flex: 0 0 100%;
 }
+
+/* -- Updated Image Masonry and Carousel Styles -- */
+.masonry-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.masonry-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry-column img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-interactive);
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+}
