@@ -104,8 +104,8 @@
     <section class="py-20 px-6 bg-surface">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate">Begin Your Culinary Journey</h2>
-                <p class="text-xl text-text-secondary max-w-2xl mx-auto">Choose your path to an unforgettable dining experience</p>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate-blur">Begin Your Culinary Journey</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto scroll-animate-rise">Choose your path to an unforgettable dining experience</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -155,8 +155,8 @@
     <section class="py-20 px-6 bg-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate">Today at Savory Haven</h2>
-                <p class="text-xl text-text-secondary">Fresh inspirations and seasonal celebrations</p>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate-blur">Today at Savory Haven</h2>
+                <p class="text-xl text-text-secondary scroll-animate-rise">Fresh inspirations and seasonal celebrations</p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -212,8 +212,8 @@
     <section class="py-20 px-6 bg-background overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate">What Our Guests Say</h2>
-                <p class="text-xl text-text-secondary">Authentic experiences shared by our valued patrons</p>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate-blur">What Our Guests Say</h2>
+                <p class="text-xl text-text-secondary scroll-animate-rise">Authentic experiences shared by our valued patrons</p>
             </div>
             
             <!-- First Marquee Row (Left to Right) -->
@@ -239,8 +239,8 @@
     <!-- Newsletter Signup -->
     <section class="py-20 px-6 bg-primary text-white">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-4 scroll-animate">Stay Connected</h2>
-            <p class="text-xl mb-8 opacity-90">Be the first to know about seasonal menus, special events, and exclusive dining experiences</p>
+            <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-4 scroll-animate-blur">Stay Connected</h2>
+            <p class="text-xl mb-8 opacity-90 scroll-animate-rise">Be the first to know about seasonal menus, special events, and exclusive dining experiences</p>
             
             <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
                 <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-lg text-text-primary focus:outline-none focus:ring-2 focus:ring-accent" required />
@@ -422,7 +422,7 @@
 
         // --- START: New Script for Scroll Animation ---
         document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.scroll-animate');
+            const animatedElements = document.querySelectorAll('.scroll-animate-blur, .scroll-animate-rise');
 
             if ("IntersectionObserver" in window) {
                 const observer = new IntersectionObserver((entries, observer) => {
