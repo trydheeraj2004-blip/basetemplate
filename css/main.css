@@ -2383,24 +2383,13 @@ h1, h2, h3, h4, h5, h6 {
     flex: 0 0 100%;
 }
 
-/* -- Updated Image Masonry and Carousel Styles -- */
-.masonry-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    flex-basis: 100%;
-    flex: 1;
-}
-
-.masonry-column img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.75rem;
-    box-shadow: var(--shadow-card);
+/* -- Final Image Masonry and Carousel Styles -- */
+.masonry-item {
+    break-inside: avoid; /* Prevents images from breaking across columns */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.masonry-column img:hover {
+.masonry-item:hover {
     transform: scale(1.03);
     box-shadow: var(--shadow-interactive);
 }
