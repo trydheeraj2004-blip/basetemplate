@@ -2373,3 +2373,12 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     transform: translateY(0); /* Rises to its normal position */
 }
+
+/* -- Image Masonry and Carousel Styles -- */
+.break-inside-avoid {
+    break-inside: avoid;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+}
