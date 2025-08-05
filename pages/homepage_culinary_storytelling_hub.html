@@ -473,7 +473,7 @@
                 { src: "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Hearty burger" },
                 { src: "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Gourmet salad" },
                 { src: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Fresh salad bowl" },
-                { src: "https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Salmon steak" },
+                { src: "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Salmon steak" },
                 { src: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Pizza slice" },
                 { src: "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Fruit bowl" },
                 { src: "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Burrito" },
@@ -494,21 +494,29 @@
                     masonryGrid.appendChild(col);
                     return col;
                 });
-                const columnHeights = Array(numColumns).fill(0);
+                
+                // This function finds the shortest column to add the next image to
+                const getShortestColumn = () => {
+                    let shortest = columns[0];
+                    for (let i = 1; i < numColumns; i++) {
+                        if (columns[i].offsetHeight < shortest.offsetHeight) {
+                            shortest = columns[i];
+                        }
+                    }
+                    return shortest;
+                };
 
+                // Add images one by one, waiting for each to load to get its height
                 galleryImages.forEach(imageData => {
                     const img = document.createElement('img');
                     img.src = imageData.src;
                     img.alt = imageData.alt;
+                    img.className = 'w-full h-auto rounded-lg shadow-card mb-6'; // Added mb-6 for spacing
                     
-                    // Find the shortest column to append the next image
-                    const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
-                    columns[shortestColumnIndex].appendChild(img);
-                    
-                    // To balance the columns, we need to estimate image heights.
-                    // A true robust solution would wait for each image to load, but for simplicity
-                    // and speed, we'll assume an average aspect ratio. This distribution is much better.
-                    columnHeights[shortestColumnIndex] += 1; // Simple increment to distribute images
+                    // Append to the shortest column after the image has loaded
+                    img.onload = () => {
+                        getShortestColumn().appendChild(img);
+                    };
                 });
             }
 
@@ -568,15 +576,3 @@
     </script>
 </body>
 </html>
-" code between  and  in the most up-to-date Canvas "homepage_culinary_storytelling_hub.html (FIXED)" document above and am asking a query about/based on this code below.
-Instructions to follow:
-  * Don't output/edit the document if the query is Direct/Simple. For example, if the query asks for a simple explanation, output a direct answer.
-  * Make sure to **edit** the document if the query shows the intent of editing the document, in which case output the entire edited document, **not just that section or the edits**.
-    * Don't output the same document/empty document and say that you have edited it.
-    * Don't change unrelated code in the document.
-  * Don't output  and  in your final response.
-  * Any references like "this" or "selected code" refers to the code between  and  tags.
-  * Just acknowledge my request in the introduction.
-  * Make sure to refer to the document as "Canvas" in your response.
-
-I have replaced the code with the code that you have provided, but I'm unable to see the images in the "A Feast for the Eyes" section. It's completely blank. Please fix the iss
