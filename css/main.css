@@ -2348,3 +2348,19 @@ h1, h2, h3, h4, h5, h6 {
         animation-duration: 35s;
     }
 }
+
+/* Added for Blur-in Animation */
+@keyframes text-blur-in {
+  from {
+    filter: blur(8px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.animate-text-blur-in {
+  animation: text-blur-in 0.8s ease-in-out both;
+}
