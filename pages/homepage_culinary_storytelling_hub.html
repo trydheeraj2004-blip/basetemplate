@@ -457,7 +457,7 @@
         // --- END: Original Scripts ---
 
 
-        // --- START: New and Updated Scripts ---
+        // --- START: Final Scripts ---
         document.addEventListener('DOMContentLoaded', () => {
             // Scroll Animation Logic
             const animatedElements = document.querySelectorAll('.scroll-animate-blur, .scroll-animate-rise');
@@ -475,43 +475,21 @@
                 animatedElements.forEach(el => el.classList.add('in-view'));
             }
 
-            // Image Gallery Logic (Masonry and Carousel)
+            // Mobile Carousel Logic
             const galleryImages = [
                 "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800",
                 "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=800",
-                "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800"
+                "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=800"
             ];
 
-            const masonryGrid = document.getElementById('masonry-grid');
             const carouselWrapper = document.getElementById('carousel-wrapper');
-            
-            // Setup for Desktop Masonry
-            if (masonryGrid) {
-                const numColumns = 4;
-                const columns = Array.from({ length: numColumns }, () => {
-                    const col = document.createElement('div');
-                    col.className = 'masonry-column';
-                    masonryGrid.appendChild(col);
-                    return col;
-                });
-                galleryImages.forEach((src, index) => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    img.alt = 'Menu item';
-                    columns[index % numColumns].appendChild(img);
-                });
-            }
-
-            // Setup for Mobile Carousel
             if (carouselWrapper) {
                 galleryImages.forEach(src => {
                     const div = document.createElement('div');
@@ -536,12 +514,11 @@
                 }
 
                 function startAutoPlay() {
-                    // First, clear any existing interval to prevent speeding up
                     clearInterval(autoPlayInterval);
                     autoPlayInterval = setInterval(() => {
                         currentIndex = (currentIndex + 1) % totalImages;
                         updateCarousel();
-                    }, 2000); // 2 seconds
+                    }, 2000);
                 }
 
                 function stopAutoPlay() {
@@ -558,14 +535,13 @@
                     updateCarousel();
                 });
 
-                // Pause autoplay on hover and resume on leave
                 carouselContainer.addEventListener('mouseenter', stopAutoPlay);
                 carouselContainer.addEventListener('mouseleave', startAutoPlay);
                 
-                startAutoPlay(); // Start the carousel on page load
+                startAutoPlay();
             }
         });
-        // --- END: New and Updated Scripts ---
+        // --- END: Final Scripts ---
     </script>
 </body>
 </html>
