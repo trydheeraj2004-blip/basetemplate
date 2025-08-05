@@ -207,7 +207,8 @@
             </div>
         </div>
     </section>
-<!-- Visual Menu Showcase Section -->
+
+    <!-- Visual Menu Showcase Section -->
     <section class="py-20 px-6 bg-surface">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -232,6 +233,7 @@
             </div>
         </div>
     </section>
+
     <!-- Testimonials Marquee Section -->
     <section class="py-20 px-6 bg-background overflow-hidden">
         <div class="max-w-7xl mx-auto">
@@ -406,8 +408,8 @@
         // Testimonial Marquee Logic
         const testimonials = [
             { quote: "An exceptional dining experience...", name: "Emily Rodriguez", title: "Food Enthusiast", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
-            { quote: "The perfect atmosphere for our anniversary...", name: "James Mitchell", title: "Anniversary Celebrant", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
-            { quote: "Outstanding cuisine that celebrates local ingredients...", name: "David Chen", title: "Food Blogger", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
+            { quote: "The perfect atmosphere for our anniversary...", name: "James Mitchell", title: "Anniversary Celebrant", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop&ixlib-rb-4.0.3" },
+            { quote: "Outstanding cuisine that celebrates local ingredients...", name: "David Chen", title: "Food Blogger", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop&ixlib-rb-4.0.3" },
             { quote: "The wine pairings are absolutely phenomenal...", name: "Sarah Johnson", title: "Wine Enthusiast", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
             { quote: "Incredible attention to dietary restrictions...", name: "Lisa Thompson", title: "Event Host", img: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
             { quote: "The sommelier's knowledge is extraordinary...", name: "Michael Roberts", title: "Wine Connoisseur", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" }
@@ -433,64 +435,76 @@
 
         const marquee1 = document.getElementById('marquee1');
         const marquee2 = document.getElementById('marquee2');
-        const firstHalf = testimonials.slice(0, Math.ceil(testimonials.length / 2));
-        const secondHalf = testimonials.slice(Math.ceil(testimonials.length / 2));
-        let marquee1Content = '';
-        [...firstHalf, ...firstHalf].forEach(t => marquee1Content += createTestimonialCard(t));
-        marquee1.innerHTML = marquee1Content;
-        let marquee2Content = '';
-        [...secondHalf, ...secondHalf].forEach(t => marquee2Content += createTestimonialCard(t));
-        marquee2.innerHTML = marquee2Content;
+        if (marquee1 && marquee2) {
+            const firstHalf = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+            const secondHalf = testimonials.slice(Math.ceil(testimonials.length / 2));
+            let marquee1Content = '';
+            [...firstHalf, ...firstHalf].forEach(t => marquee1Content += createTestimonialCard(t));
+            marquee1.innerHTML = marquee1Content;
+            let marquee2Content = '';
+            [...secondHalf, ...secondHalf].forEach(t => marquee2Content += createTestimonialCard(t));
+            marquee2.innerHTML = marquee2Content;
+        }
         // --- END: Original Scripts ---
 
 
-        // --- START: New Script for Scroll Animation ---
+        // --- START: New and Updated Scripts ---
         document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Animation Logic
             const animatedElements = document.querySelectorAll('.scroll-animate-blur, .scroll-animate-rise');
-
             if ("IntersectionObserver" in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
+                const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('in-view');
-                            observer.unobserve(entry.target); // Stop observing once animated
+                            observer.unobserve(entry.target);
                         }
                     });
-                }, {
-                    threshold: 0.1 // Trigger when 10% of the element is visible
-                });
-
-                animatedElements.forEach(element => {
-                    observer.observe(element);
-                });
+                }, { threshold: 0.1 });
+                animatedElements.forEach(el => observer.observe(el));
             } else {
-                // Fallback for older browsers
-                animatedElements.forEach(element => {
-                    element.classList.add('in-view');
-                });
+                animatedElements.forEach(el => el.classList.add('in-view'));
             }
-        });
-        // --- END: New Script for Scroll Animation ---
-// --- START: New Script for Mobile Image Carousel ---
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = [
-                "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-                "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+
+            // Image Gallery Logic (Masonry and Carousel)
+            const galleryImages = [
+                "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/361184/pexels-photo-361184.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800"
             ];
 
+            const masonryGrid = document.getElementById('masonry-grid');
             const carouselWrapper = document.getElementById('carousel-wrapper');
+            
+            // Setup for Desktop Masonry
+            if (masonryGrid) {
+                const numColumns = 4;
+                const columns = Array.from({ length: numColumns }, () => {
+                    const col = document.createElement('div');
+                    col.className = 'masonry-column';
+                    masonryGrid.appendChild(col);
+                    return col;
+                });
+                galleryImages.forEach((src, index) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = 'Menu item';
+                    columns[index % numColumns].appendChild(img);
+                });
+            }
+
+            // Setup for Mobile Carousel
             if (carouselWrapper) {
-                images.forEach(src => {
+                galleryImages.forEach(src => {
                     const div = document.createElement('div');
                     div.className = 'carousel-item';
                     const img = document.createElement('img');
@@ -502,12 +516,27 @@
                 });
 
                 let currentIndex = 0;
-                const totalImages = images.length;
+                const totalImages = galleryImages.length;
                 const prevBtn = document.getElementById('prevBtn');
                 const nextBtn = document.getElementById('nextBtn');
+                const carouselContainer = document.getElementById('carousel-container');
+                let autoPlayInterval;
 
                 function updateCarousel() {
                     carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+
+                function startAutoPlay() {
+                    // First, clear any existing interval to prevent speeding up
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % totalImages;
+                        updateCarousel();
+                    }, 2000); // 2 seconds
+                }
+
+                function stopAutoPlay() {
+                    clearInterval(autoPlayInterval);
                 }
 
                 nextBtn.addEventListener('click', () => {
@@ -519,9 +548,15 @@
                     currentIndex = (currentIndex - 1 + totalImages) % totalImages;
                     updateCarousel();
                 });
+
+                // Pause autoplay on hover and resume on leave
+                carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+                carouselContainer.addEventListener('mouseleave', startAutoPlay);
+                
+                startAutoPlay(); // Start the carousel on page load
             }
         });
-        // --- END: New Script for Mobile Image Carousel ---
+        // --- END: New and Updated Scripts ---
     </script>
 </body>
 </html>
