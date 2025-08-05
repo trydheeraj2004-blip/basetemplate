@@ -2349,18 +2349,17 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Added for Blur-in Animation */
-@keyframes text-blur-in {
-  from {
-    filter: blur(8px);
+/* -- Animation on Scroll -- */
+
+/* This is the initial, hidden state of the text */
+.scroll-animate {
+    filter: blur(5px);
     opacity: 0;
-  }
-  to {
-    filter: blur(0);
-    opacity: 1;
-  }
+    transition: filter 0.8s ease-out, opacity 0.8s ease-out;
 }
 
-.animate-text-blur-in {
-  animation: text-blur-in 0.8s ease-in-out both;
+/* This class will be added by JavaScript when you scroll to the text, triggering the animation */
+.scroll-animate.in-view {
+    filter: blur(0);
+    opacity: 1;
 }
