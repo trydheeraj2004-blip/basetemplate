@@ -88,9 +88,11 @@ module.exports = {
         'xl': '1rem',
         '2xl': '1.5rem',
       },
+      // New animation code starts here
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
         'fade-in': 'fadeIn 0.4s ease-out forwards',
+        'text-blur-in': 'text-blur-in 0.8s ease-in-out both',
       },
       keyframes: {
         fadeInUp: {
@@ -111,7 +113,18 @@ module.exports = {
             opacity: '1',
           },
         },
+        'text-blur-in': {
+          '0%': {
+            filter: 'blur(8px)',
+            opacity: '0',
+          },
+          '100%': {
+            filter: 'blur(0)',
+            opacity: '1',
+          },
+        },
       },
+      // New animation code ends here
     },
   },
   plugins: [],
