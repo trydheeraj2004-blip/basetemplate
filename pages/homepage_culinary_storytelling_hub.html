@@ -1092,6 +1092,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// Directions Button Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const directionsBtn = document.getElementById('directions-btn');
+    
+    if (directionsBtn) {
+        directionsBtn.addEventListener('click', function() {
+            // Coordinates for Savory Haven location
+            const destinationLat = 17.34514031006562;
+            const destinationLng = 78.5529614504836;
+            
+            // Check if user is on mobile device
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // Open in Google Maps app if available, otherwise browser
+                window.open(`https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`, '_blank');
+            } else {
+                // Desktop - open in new tab
+                window.open(`https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}&travelmode=driving`, '_blank');
+            }
+        });
+    }
+});
 
     </script>
 </body>
