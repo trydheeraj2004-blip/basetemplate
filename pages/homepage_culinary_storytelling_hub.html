@@ -399,8 +399,13 @@
 
     <!-- Hero Section with Parallax -->
     <section class="relative h-screen overflow-hidden">
-        <!-- Background Video -->
-<div class="absolute inset-0" id="hero-video-container">
+        <!-- Mobile Background Image - ONLY VISIBLE ON MOBILE -->
+<div class="absolute inset-0 mobile-hero-bg">
+    <img src="https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="Delicious Biryani" class="w-full h-full object-cover" loading="eager" />
+</div>
+
+<!-- Desktop Background Video - ONLY VISIBLE ON DESKTOP -->
+<div class="absolute inset-0 desktop-hero-bg">
     <iframe
     src="https://player.cloudinary.com/embed/?cloud_name=dtealftsb&public_id=Untitled_design_13_uwb3tp&profile=cld-default&player%5Bautoplay%5D=true&player%5Bloop%5D=true&player%5Bmuted%5D=true&player%5Bcontrols%5D=false"
     width="100%"
@@ -409,9 +414,9 @@
     allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
     allowfullscreen
     frameborder="0">
-</iframe>
-
+    </iframe>
 </div>
+
 
         
         <!-- Overlay -->
