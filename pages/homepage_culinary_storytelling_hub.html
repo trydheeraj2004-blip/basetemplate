@@ -225,10 +225,21 @@
         height: 250px;
     }
 
-    /* Hide images beyond the first 4 on mobile */
-    .ambience-item:nth-child(n+5) {
-        display: none;
-    }
+    /* Hide images beyond the first 4 on mobile initially */
+.ambience-item:nth-child(n+5) {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+/* Show images when expanded */
+.ambience-expanded .ambience-item:nth-child(n+5) {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
     /* Add blur effect to the 4th image */
     .ambience-item:nth-child(4)::after {
