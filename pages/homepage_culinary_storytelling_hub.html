@@ -946,6 +946,30 @@ galleryItems.forEach((itemData, index) => {
             }
         });
         // --- END: Final Scripts ---
+        // Ambience Section Expand Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const expandBtn = document.getElementById('expand-ambience-btn');
+    const ambienceGrid = document.querySelector('.ambience-grid');
+    
+    if (expandBtn && ambienceGrid) {
+        expandBtn.addEventListener('click', function() {
+            // Add expanded class to show hidden images
+            ambienceGrid.classList.add('ambience-expanded');
+            
+            // Optional: Smooth scroll to show newly revealed content
+            setTimeout(() => {
+                const hiddenItems = document.querySelectorAll('.ambience-item:nth-child(n+5)');
+                if (hiddenItems.length > 0) {
+                    hiddenItems[0].scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }
+            }, 300); // Small delay to let the animation start
+        });
+    }
+});
+
     </script>
 </body>
 </html>
