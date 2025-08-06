@@ -779,10 +779,21 @@
                 
                 const columns = masonryGrid.querySelectorAll('.masonry-column');
                 
-                // Round-robin distribution for better balance
-                galleryItems.forEach((itemData, index) => {
-                    const columnIndex = index % numColumns;
-                    const targetColumn = columns[columnIndex];
+                // Smart distribution based on column heights
+galleryItems.forEach((itemData, index) => {
+    // Find the shortest column
+    let shortestColumn = columns[0];
+    let shortestHeight = columns[0].offsetHeight;
+    
+    for (let i = 1; i < columns.length; i++) {
+        if (columns[i].offsetHeight < shortestHeight) {
+            shortestHeight = columns[i].offsetHeight;
+            shortestColumn = columns[i];
+        }
+    }
+    
+    const targetColumn = shortestColumn;
+
                     
                     const itemContainer = document.createElement('div');
                     itemContainer.className = 'masonry-item';
