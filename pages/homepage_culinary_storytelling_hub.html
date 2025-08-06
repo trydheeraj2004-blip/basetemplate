@@ -10,10 +10,14 @@
 <style>
     /* Masonry - Desktop Only */
     .masonry-container {
-        display: none; /* Hide by default */
-        gap: 1rem;
-        align-items: flex-start;
-    }
+    display: none; /* Hide by default */
+    gap: 1rem;
+    align-items: flex-start;
+    height: 800px; /* Fixed height - adjust this value as needed */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+}
+
 
     @media (min-width: 1024px) {
         .masonry-container {
