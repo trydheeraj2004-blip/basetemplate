@@ -215,23 +215,58 @@
     }
 
     /* Mobile adjustments */
-    @media (max-width: 767px) {
-        .ambience-grid {
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .ambience-item {
-            height: 250px;
-        }
-
-        .ambience-overlay {
-            position: static;
-            transform: none;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
-            padding: 1rem;
-        }
+@media (max-width: 767px) {
+    .ambience-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
+
+    .ambience-item {
+        height: 250px;
+    }
+
+    /* Hide images beyond the first 4 on mobile */
+    .ambience-item:nth-child(n+5) {
+        display: none;
+    }
+
+    /* Add blur effect to the 4th image */
+    .ambience-item:nth-child(4)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(2px);
+        z-index: 1;
+    }
+
+    /* View More button positioning */
+    .ambience-item:nth-child(4) .view-more-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        background: #8B4513;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .ambience-overlay {
+        position: static;
+        transform: none;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+        padding: 1rem;
+    }
+}
+
 </style>
 </head>
 <body class="bg-background text-text-primary">
