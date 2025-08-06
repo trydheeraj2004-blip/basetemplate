@@ -255,27 +255,34 @@
     }
 
     /* View More button positioning */
-    .ambience-item:nth-child(4) .view-more-btn {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        background: #8B4513;
-        color: white;
-        padding: 8px 16px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-    }
+.ambience-item:nth-child(4) .view-more-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: #8B4513;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: none; /* Add this since it's now a button */
+    cursor: pointer; /* Add this for better UX */
+    transition: all 0.3s ease; /* Add smooth transition */
+}
 
-    .ambience-overlay {
-        position: static;
-        transform: none;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
-        padding: 1rem;
-    }
+.ambience-item:nth-child(4) .view-more-btn:hover {
+    background: #6d3410; /* Darker brown on hover */
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Hide the button when expanded */
+.ambience-expanded .ambience-item:nth-child(4) .view-more-btn {
+    display: none;
+}
+
 }
 
 </style>
