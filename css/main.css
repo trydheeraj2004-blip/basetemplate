@@ -2350,7 +2350,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .marquee-reverse {
         display: flex;
-        animation: marquee 30s linear infinite;
+        animation: marquee-reverse 30s linear infinite;
         gap: 2rem;
         width: fit-content;
     }
