@@ -6,58 +6,186 @@
     <title>Savory Haven - Where Every Meal Becomes a Memory</title>
     <meta name="description" content="Premium neighborhood restaurant crafting extraordinary dining experiences through culinary excellence and warm hospitality. Discover seasonal menus, reserve your table, and become part of our culinary story." />
     <link rel="stylesheet" href="../css/main.css" />
-    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frestaurant1620back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
-    <style>
-        /* Infinite Marquee Animation Fix */
-        @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-        @keyframes marquee-reverse {
-            from { transform: translateX(-50%); }
-            to { transform: translateX(0); }
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frestaurant1620back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+<style>
+    /* Masonry CSS - Desktop Only */
+    .masonry-container {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .masonry-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .masonry-item {
+        width: 100%;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .masonry-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .masonry-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    /* Mobile carousel styles */
+    .carousel-item {
+        flex: 0 0 100%;
+        height: 300px;
+    }
+    
+    /* Ambience Section Styles */
+    .ambience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+        .ambience-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 250px);
         }
         
-        /* Masonry Layout Fix */
-        .masonry-item {
-            break-inside: avoid; /* Prevents images from breaking across columns */
+        .ambience-item:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
         }
-
-        /* Carousel Dish Name Styles */
-        .carousel-dish-name-wrapper {
-            position: relative;
-            text-align: center;
-            margin-top: 1rem;
-            height: 2.5rem; /* Reserve space to prevent layout shift */
-            overflow: hidden;
+        
+        .ambience-item:nth-child(2) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 3;
         }
-
-        .carousel-dish-name {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--color-text-primary);
-            transition: opacity 0.4s ease-in-out;
+        
+        .ambience-item:nth-child(3) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 4;
+        }
+        
+        .ambience-item:nth-child(4) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        
+        .ambience-item:nth-child(5) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+        }
+        
+        .ambience-item:nth-child(6) {
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+        }
+        
+        .ambience-item:nth-child(7) {
+            grid-column: 1 / 4;
+            grid-row: 4 / 5;
+            height: 200px;
+        }
+    }
+    
+    .ambience-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s ease;
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+    .ambience-item:nth-child(1) { animation-delay: 0.1s; }
+    .ambience-item:nth-child(2) { animation-delay: 0.2s; }
+    .ambience-item:nth-child(3) { animation-delay: 0.3s; }
+    .ambience-item:nth-child(4) { animation-delay: 0.4s; }
+    .ambience-item:nth-child(5) { animation-delay: 0.5s; }
+    .ambience-item:nth-child(6) { animation-delay: 0.6s; }
+    .ambience-item:nth-child(7) { animation-delay: 0.7s; }
+    
+    @keyframes fadeInUp {
+        to {
             opacity: 1;
+            transform: translateY(0);
         }
-
-        /* Ambience Grid Styles */
-        .ambience-grid-item {
-            overflow: hidden;
-            border-radius: 0.75rem;
-            box-shadow: var(--shadow-card);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .ambience-item:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .ambience-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+    
+    .ambience-item:hover img {
+        transform: scale(1.1);
+    }
+    
+    .ambience-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 1.5rem;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .ambience-item:hover .ambience-overlay {
+        transform: translateY(0);
+    }
+    
+    .ambience-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .ambience-description {
+        font-size: 0.875rem;
+        opacity: 0.9;
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 767px) {
+        .ambience-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
-        .ambience-grid-item:hover {
-            transform: scale(1.03);
-            box-shadow: var(--shadow-interactive);
+        
+        .ambience-item {
+            height: 250px;
         }
-        .ambience-grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        
+        .ambience-overlay {
+            position: static;
+            transform: none;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+            padding: 1rem;
         }
-    </style>
+    }
+</style>
 </head>
 <body class="bg-background text-text-primary">
     <!-- Navigation Header -->
@@ -202,34 +330,69 @@
         </div>
     </section>
 
-    <!-- Our Ambiance Section -->
+    <!-- Ambience Section (New) -->
     <section class="py-20 px-6 bg-background">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate-blur">Experience Our Ambiance</h2>
-                <p class="text-xl text-text-secondary max-w-2xl mx-auto scroll-animate-rise">An inviting atmosphere for every occasion.</p>
+                <h2 class="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4 scroll-animate-blur">Experience Our Ambience</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto scroll-animate-rise">Step into a world of warmth, elegance, and culinary artistry</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-3 gap-4 md:gap-6 h-[500px] md:h-[600px]">
-                <div class="md:col-span-2 md:row-span-2 ambience-grid-item scroll-animate-rise">
-                    <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Spacious dining hall">
+            
+            <div class="ambience-grid">
+                <div class="ambience-item">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2940&auto=format&fit=crop" alt="Elegant dining room with warm lighting" />
+                    <div class="ambience-overlay">
+                        <div class="ambience-title">Main Dining Room</div>
+                        <div class="ambience-description">Sophisticated elegance meets warm hospitality in our beautifully appointed main dining area</div>
+                    </div>
                 </div>
-                <div class="ambience-grid-item scroll-animate-rise" style="animation-delay: 0.1s;">
-                    <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Elegant table setting for two">
+                
+                <div class="ambience-item">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2940&auto=format&fit=crop" alt="Intimate booth seating area" />
+                    <div class="ambience-overlay">
+                        <div class="ambience-title">Intimate Booths</div>
+                        <div class="ambience-description">Perfect for romantic dinners and special conversations</div>
+                    </div>
                 </div>
-                <div class="ambience-grid-item scroll-animate-rise" style="animation-delay: 0.2s;">
-                    <img src="https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cozy corner booth">
+                
+                <div class="ambience-item">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940&auto=format&fit=crop" alt="Bar area with premium spirits" />
+                    <div class="ambience-overlay">
+                        <div class="ambience-title">Craft Bar</div>
+                        <div class="ambience-description">Artisanal cocktails and curated wine selection in a sophisticated setting</div>
+                    </div>
                 </div>
-                <div class="ambience-grid-item scroll-animate-rise" style="animation-delay: 0.3s;">
-                    <img src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Bar area with warm lighting">
+                
+                <div class="ambience-item">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2940&auto=format&fit=crop" alt="Open kitchen view" />
+                    <div class="ambience-overlay">
+                        <div class="ambience-title">Chef's Table</div>
+                        <div class="ambience-description">Watch culinary magic happen at our exclusive chef's counter</div>
+                    </div>
                 </div>
-                <div class="ambience-grid-item scroll-animate-rise" style="animation-delay: 0.4s;">
-                    <img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Restaurant interior view">
+                
+                <div class="ambience-item">
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=2940&auto=format&fit=crop" alt="Private dining room" />
+                    <div class="ambience-overlay">
+                        <div class="ambience-title">Private Room</div>
+                        <div class="ambience-description">Exclusive space for celebrations and business gatherings</div>
+                    </div>
                 </div>
-                <div class="ambience-grid-item scroll-animate-rise" style="animation-delay: 0.5s;">
-                    <img src="https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Outdoor patio seating">
+                
+                <div class="ambience-item">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2940&auto=format&fit=crop" alt="Outdoor terrace dining" />
+                    <div class="ambience-overlay">
+                        <div class="ambience-title">Garden Terrace</div>
+                        <div class="ambience-description">Al fresco dining under the stars with city views</div>
+                    </div>
                 </div>
-                <div class="ambience-grid-item scroll-animate-rise" style="animation-delay: 0.6s;">
-                    <img src="https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Chef preparing a dish in the kitchen">
+                
+                <div class="ambience-item">
+                    <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=2940&auto=format&fit=crop" alt="Wine cellar atmosphere" />
+                    <div class="ambience-overlay">
+                        <div class="ambience-title">Wine Cellar</div>
+                        <div class="ambience-description">Temperature-controlled cellar housing our finest vintage collection</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -243,31 +406,17 @@
                 <p class="text-xl text-text-secondary max-w-2xl mx-auto scroll-animate-rise">Discover the artistry and passion behind our most beloved dishes.</p>
             </div>
 
-            <!-- Desktop Masonry Grid -->
-            <div class="hidden md:block columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pasta dish"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sweet pancakes"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hearty burger"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gourmet salad"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh salad bowl"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Salmon steak"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Pizza slice"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fruit bowl"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Burrito"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gourmet soup"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Avocado toast"></div>
-                <div class="masonry-item"><img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cheesy Pizza"></div>
+            <!-- Desktop Masonry Grid - Hidden on Mobile -->
+            <div class="hidden md:block masonry-container" id="masonry-grid">
+                <!-- Masonry columns are generated by JavaScript -->
             </div>
 
-            <!-- Mobile Carousel -->
-            <div class="md:hidden relative" id="carousel-container">
+            <!-- Mobile Carousel - Hidden on Desktop -->
+            <div class="block md:hidden relative" id="carousel-container">
                 <div class="overflow-hidden rounded-lg shadow-interactive">
                     <div class="flex transition-transform duration-700 ease-in-out" id="carousel-wrapper">
                         <!-- Carousel images will be generated by JavaScript -->
                     </div>
-                </div>
-                <div class="carousel-dish-name-wrapper">
-                    <p id="carousel-dish-name" class="carousel-dish-name"></p>
                 </div>
                 <button id="prevBtn" class="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white/60 backdrop-blur-sm rounded-full p-2 h-10 w-10 flex items-center justify-center text-primary shadow-lg hover:bg-white transition-colors">&lt;</button>
                 <button id="nextBtn" class="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white/60 backdrop-blur-sm rounded-full p-2 h-10 w-10 flex items-center justify-center text-primary shadow-lg hover:bg-white transition-colors">&gt;</button>
@@ -384,68 +533,112 @@
     </footer>
 
     <script>
+        // --- START: Original Scripts ---
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hero background image rotation
+        let currentBg = 1;
+        setInterval(() => {
+            const bg1 = document.getElementById('hero-bg-1');
+            const bg2 = document.getElementById('hero-bg-2');
+            
+            if (currentBg === 1) {
+                bg1.style.opacity = '0';
+                bg2.style.opacity = '1';
+                currentBg = 2;
+            } else {
+                bg1.style.opacity = '1';
+                bg2.style.opacity = '0';
+                currentBg = 1;
+            }
+        }, 5000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-background');
+                nav.classList.remove('bg-background/95');
+            } else {
+                nav.classList.remove('bg-background');
+                nav.classList.add('bg-background/95');
+            }
+        });
+
+        // Newsletter form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            const submitButton = this.querySelector('button');
+            submitButton.textContent = 'Thank You!';
+            setTimeout(() => {
+                submitButton.textContent = 'Subscribe';
+            }, 3000);
+            this.reset();
+        });
+
+        // Testimonial Marquee Logic
+        const testimonials = [
+            { quote: "An exceptional dining experience...", name: "Emily Rodriguez", title: "Food Enthusiast", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
+            { quote: "The perfect atmosphere for our anniversary...", name: "James Mitchell", title: "Anniversary Celebrant", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
+            { quote: "Outstanding cuisine that celebrates local ingredients...", name: "David Chen", title: "Food Blogger", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
+            { quote: "The wine pairings are absolutely phenomenal...", name: "Sarah Johnson", title: "Wine Enthusiast", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
+            { quote: "Incredible attention to dietary restrictions...", name: "Lisa Thompson", title: "Event Host", img: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
+            { quote: "The sommelier's knowledge is extraordinary...", name: "Michael Roberts", title: "Wine Connoisseur", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" }
+        ];
+
+        function createTestimonialCard(testimonial) {
+            return `
+                <div class="testimonial-card">
+                    <div class="flex text-accent mb-4">
+                        ${'<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>'.repeat(5)}
+                    </div>
+                    <p class="text-text-primary mb-4 font-crimson text-lg" style="white-space: normal;">"${testimonial.quote}"</p>
+                    <div class="flex items-center">
+                        <img src="${testimonial.img}" alt="${testimonial.name}" class="w-12 h-12 rounded-full object-cover mr-4" />
+                        <div>
+                            <p class="font-semibold text-primary">${testimonial.name}</p>
+                            <p class="text-text-secondary text-sm">${testimonial.title}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        const marquee1 = document.getElementById('marquee1');
+        const marquee2 = document.getElementById('marquee2');
+        if (marquee1 && marquee2) {
+            const firstHalf = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+            const secondHalf = testimonials.slice(Math.ceil(testimonials.length / 2));
+            let marquee1Content = '';
+            [...firstHalf, ...firstHalf].forEach(t => marquee1Content += createTestimonialCard(t));
+            marquee1.innerHTML = marquee1Content;
+            let marquee2Content = '';
+            [...secondHalf, ...secondHalf].forEach(t => marquee2Content += createTestimonialCard(t));
+            marquee2.innerHTML = marquee2Content;
+        }
+        // --- END: Original Scripts ---
+
         // --- START: Final Scripts ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile menu toggle
-            document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-                document.getElementById('mobile-menu').classList.toggle('hidden');
-            });
-
-            // Hero background image rotation
-            let currentBg = 1;
-            setInterval(() => {
-                const bg1 = document.getElementById('hero-bg-1');
-                const bg2 = document.getElementById('hero-bg-2');
-                if (bg1 && bg2) {
-                    if (currentBg === 1) {
-                        bg1.style.opacity = '0';
-                        bg2.style.opacity = '1';
-                        currentBg = 2;
-                    } else {
-                        bg1.style.opacity = '1';
-                        bg2.style.opacity = '0';
-                        currentBg = 1;
-                    }
-                }
-            }, 5000);
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-
-            // Add scroll effect to navigation
-            window.addEventListener('scroll', function() {
-                const nav = document.querySelector('nav');
-                if (window.scrollY > 100) {
-                    nav.classList.add('bg-background');
-                    nav.classList.remove('bg-background/95');
-                } else {
-                    nav.classList.remove('bg-background');
-                    nav.classList.add('bg-background/95');
-                }
-            });
-
-            // Newsletter form submission
-            const newsletterForm = document.querySelector('form');
-            if(newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const submitButton = this.querySelector('button');
-                    submitButton.textContent = 'Thank You!';
-                    setTimeout(() => {
-                        submitButton.textContent = 'Subscribe';
-                    }, 3000);
-                    this.reset();
-                });
-            }
-
             // Scroll Animation Logic
             const animatedElements = document.querySelectorAll('.scroll-animate-blur, .scroll-animate-rise');
             if ("IntersectionObserver" in window) {
@@ -462,64 +655,106 @@
                 animatedElements.forEach(el => el.classList.add('in-view'));
             }
 
-            // Testimonial Marquee Logic
-            const testimonials = [
-                { quote: "An exceptional dining experience...", name: "Emily Rodriguez", title: "Food Enthusiast", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
-                { quote: "The perfect atmosphere for our anniversary...", name: "James Mitchell", title: "Anniversary Celebrant", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
-                { quote: "Outstanding cuisine that celebrates local ingredients...", name: "David Chen", title: "Food Blogger", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
-                { quote: "The wine pairings are absolutely phenomenal...", name: "Sarah Johnson", title: "Wine Enthusiast", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
-                { quote: "Incredible attention to dietary restrictions...", name: "Lisa Thompson", title: "Event Host", img: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" },
-                { quote: "The sommelier's knowledge is extraordinary...", name: "Michael Roberts", title: "Wine Connoisseur", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" }
-            ];
-
-            function createTestimonialCard(testimonial) {
-                return `
-                    <div class="testimonial-card">
-                        <div class="flex text-accent mb-4">
-                            ${'<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>'.repeat(5)}
-                        </div>
-                        <p class="text-text-primary mb-4 font-crimson text-lg" style="white-space: normal;">"${testimonial.quote}"</p>
-                        <div class="flex items-center">
-                            <img src="${testimonial.img}" alt="${testimonial.name}" class="w-12 h-12 rounded-full object-cover mr-4" />
-                            <div>
-                                <p class="font-semibold text-primary">${testimonial.name}</p>
-                                <p class="text-text-secondary text-sm">${testimonial.title}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-
-            const marquee1 = document.getElementById('marquee1');
-            const marquee2 = document.getElementById('marquee2');
-            if (marquee1 && marquee2) {
-                const firstHalf = testimonials.slice(0, Math.ceil(testimonials.length / 2));
-                const secondHalf = testimonials.slice(Math.ceil(testimonials.length / 2));
-                let marquee1Content = '';
-                [...firstHalf, ...firstHalf].forEach(t => marquee1Content += createTestimonialCard(t));
-                marquee1.innerHTML = marquee1Content;
-                let marquee2Content = '';
-                [...secondHalf, ...secondHalf].forEach(t => marquee2Content += createTestimonialCard(t));
-                marquee2.innerHTML = marquee2Content;
-            }
-
-            // Image Gallery Logic
+            // Image Gallery Logic (Fixed Masonry and Carousel)
             const galleryImages = [
-                { src: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Pasta dish", name: "Classic Spaghetti Aglio e Olio" },
-                { src: "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Sweet pancakes", name: "Berry & Maple Pancakes" },
-                { src: "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Hearty burger", name: "Gourmet Angus Burger" },
-                { src: "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Gourmet salad", name: "Mediterranean Quinoa Salad" },
-                { src: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Fresh salad bowl", name: "Harvest Chicken Salad" },
-                { src: "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Salmon steak", name: "Pan-Seared Salmon" },
-                { src: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Pizza slice", name: "Artisanal Pepperoni Pizza" },
-                { src: "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Fruit bowl", name: "Tropical Fruit Medley" },
-                { src: "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Burrito", name: "Spicy Chicken Burrito" },
-                { src: "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Gourmet soup", name: "Creamy Tomato Basil Soup" },
-                { src: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Avocado toast", name: "Avocado & Poached Egg Toast" },
-                { src: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Cheesy Pizza", name: "Margherita Pizza"}
+                { src: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Pasta dish" },
+                { src: "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Sweet pancakes" },
+                { src: "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Hearty burger" },
+                { src: "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Gourmet salad" },
+                { src: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Fresh salad bowl" },
+                { src: "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Salmon steak" },
+                { src: "https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Pizza slice" },
+                { src: "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Fruit bowl" },
+                { src: "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Burrito" },
+                { src: "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Gourmet soup" },
+                { src: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Avocado toast" },
+                { src: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=800", alt: "Cheesy Pizza"}
             ];
 
+            const masonryGrid = document.getElementById('masonry-grid');
             const carouselWrapper = document.getElementById('carousel-wrapper');
+            
+            // Desktop Masonry Setup (Hidden on Mobile)
+            if (masonryGrid) {
+                const numColumns = 4;
+                
+                // Create columns
+                for (let i = 0; i < numColumns; i++) {
+                    const column = document.createElement('div');
+                    column.className = 'masonry-column';
+                    column.setAttribute('data-column', i);
+                    masonryGrid.appendChild(column);
+                }
+                
+                const columns = masonryGrid.querySelectorAll('.masonry-column');
+                let imagesLoaded = 0;
+                const totalImages = galleryImages.length;
+                
+                // Function to get the shortest column
+                const getShortestColumn = () => {
+                    let shortestColumn = columns[0];
+                    let shortestHeight = shortestColumn.offsetHeight;
+                    
+                    for (let i = 1; i < columns.length; i++) {
+                        const columnHeight = columns[i].offsetHeight;
+                        if (columnHeight < shortestHeight) {
+                            shortestHeight = columnHeight;
+                            shortestColumn = columns[i];
+                        }
+                    }
+                    return shortestColumn;
+                };
+                
+                // Create and load images
+                galleryImages.forEach((imageData, index) => {
+                    const imageContainer = document.createElement('div');
+                    imageContainer.className = 'masonry-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = imageData.src;
+                    img.alt = imageData.alt;
+                    img.loading = index < 8 ? 'eager' : 'lazy';
+                    
+                    // Handle image load
+                    img.onload = () => {
+                        imagesLoaded++;
+                        
+                        // Add to shortest column
+                        const shortestColumn = getShortestColumn();
+                        imageContainer.appendChild(img);
+                        shortestColumn.appendChild(imageContainer);
+                        
+                        // Final rebalancing if needed
+                        if (imagesLoaded === totalImages) {
+                            setTimeout(() => {
+                                rebalanceColumns();
+                            }, 100);
+                        }
+                    };
+                    
+                    // Error handling
+                    img.onerror = () => {
+                        img.src = 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800';
+                        img.onerror = null;
+                    };
+                });
+                
+                // Function to rebalance columns
+                const rebalanceColumns = () => {
+                    const items = Array.from(masonryGrid.querySelectorAll('.masonry-item'));
+                    
+                    // Clear columns
+                    columns.forEach(column => column.innerHTML = '');
+                    
+                    // Redistribute items
+                    items.forEach(item => {
+                        const shortestColumn = getShortestColumn();
+                        shortestColumn.appendChild(item);
+                    });
+                };
+            }
+
+            // Mobile Carousel Setup (Hidden on Desktop)
             if (carouselWrapper) {
                 galleryImages.forEach(imageData => {
                     const div = document.createElement('div');
@@ -537,20 +772,10 @@
                 const prevBtn = document.getElementById('prevBtn');
                 const nextBtn = document.getElementById('nextBtn');
                 const carouselContainer = document.getElementById('carousel-container');
-                const dishNameElement = document.getElementById('carousel-dish-name');
                 let autoPlayInterval;
 
-                function updateCarousel(isInitial = false) {
-                    if (dishNameElement) {
-                        dishNameElement.style.opacity = 0;
-                        setTimeout(() => {
-                            dishNameElement.textContent = galleryImages[currentIndex].name;
-                            dishNameElement.style.opacity = 1;
-                        }, 400);
-                    }
-                    if (!isInitial) {
-                        carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    }
+                function updateCarousel() {
+                    carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
                 }
 
                 function startAutoPlay() {
@@ -578,7 +803,6 @@
                 carouselContainer.addEventListener('mouseenter', stopAutoPlay);
                 carouselContainer.addEventListener('mouseleave', startAutoPlay);
                 
-                updateCarousel(true);
                 startAutoPlay();
             }
         });
