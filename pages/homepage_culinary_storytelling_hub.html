@@ -20,14 +20,17 @@
 
 
     @media (min-width: 1024px) {
-        .masonry-container {
-            display: flex; /* Show only on desktop */
-        }
-
-        #carousel-container {
-            display: none !important; /* Hide carousel on desktop */
-        }
+    .masonry-container {
+        display: flex; /* Show only on desktop */
+        height: 800px; /* Ensure consistent height on desktop */
+        overflow: hidden; /* Hide overflowing content */
     }
+
+    #carousel-container {
+        display: none !important; /* Hide carousel on desktop */
+    }
+}
+
 
     .masonry-column {
         flex: 1;
