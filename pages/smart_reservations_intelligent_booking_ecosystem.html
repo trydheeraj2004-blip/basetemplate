@@ -6,7 +6,195 @@
     <title>Smart Reservations - Savory Haven</title>
     <meta name="description" content="Intelligent booking system for Savory Haven. Reserve your perfect dining experience with real-time availability, special occasion planning, and personalized service coordination." />
     <link rel="stylesheet" href="../css/main.css" />
-<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frestaurant1620back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frestaurant1620back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+    <style>
+        .floating-label {
+            position: relative;
+        }
+        
+        .floating-label input,
+        .floating-label select,
+        .floating-label textarea {
+            padding: 1.5rem 1rem 0.5rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fafafa;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .floating-label input:focus,
+        .floating-label select:focus,
+        .floating-label textarea:focus {
+            border-color: #8B5A3C;
+            background: white;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 90, 60, 0.1);
+        }
+        
+        .floating-label label {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            color: #6b7280;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: 500;
+        }
+        
+        .floating-label input:focus + label,
+        .floating-label input:not(:placeholder-shown) + label,
+        .floating-label select:focus + label,
+        .floating-label select:not([value=""]) + label,
+        .floating-label textarea:focus + label,
+        .floating-label textarea:not(:placeholder-shown) + label {
+            top: 0.25rem;
+            font-size: 0.75rem;
+            color: #8B5A3C;
+            font-weight: 600;
+        }
+        
+        .celebration-card {
+            background: linear-gradient(135deg, #8B5A3C 0%, #A0522D 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            color: white;
+            text-align: center;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        
+        .celebration-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 90, 60, 0.3);
+        }
+        
+        .party-size-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        
+        .party-btn {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fafafa;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .party-btn:hover {
+            border-color: #8B5A3C;
+            background: #f7f3f0;
+            transform: translateY(-2px);
+        }
+        
+        .party-btn.active {
+            border-color: #8B5A3C;
+            background: #8B5A3C;
+            color: white;
+        }
+        
+        .party-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .party-btn:hover::before {
+            left: 100%;
+        }
+        
+        .form-step {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideInUp 0.6s ease forwards;
+        }
+        
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-step:nth-child(1) { animation-delay: 0.1s; }
+        .form-step:nth-child(2) { animation-delay: 0.2s; }
+        .form-step:nth-child(3) { animation-delay: 0.3s; }
+        .form-step:nth-child(4) { animation-delay: 0.4s; }
+        .form-step:nth-child(5) { animation-delay: 0.5s; }
+        
+        .seating-option {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+        
+        .seating-option:hover {
+            border-color: #8B5A3C;
+            background: #f7f3f0;
+        }
+        
+        .seating-option.selected {
+            border-color: #8B5A3C;
+            background: #8B5A3C;
+            color: white;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #8B5A3C, #A0522D);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #8B5A3C 0%, #A0522D 100%);
+            color: white;
+            padding: 1.25rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 90, 60, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body class="bg-background text-text-primary">
     <!-- Navigation Header -->
@@ -29,7 +217,6 @@
                     <a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-primary font-semibold border-b-2 border-primary pb-1">Reservations</a>
                     <a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-text-secondary hover:text-primary transition-smooth">Gallery</a>
                     <a href="about_culinary_heritage_community_story.html" class="text-text-secondary hover:text-primary transition-smooth">About</a>
-                    
                     <a href="contact_hub_comprehensive_communication_center.html" class="text-text-secondary hover:text-primary transition-smooth">Contact</a>
                 </div>
                 
@@ -54,7 +241,6 @@
                     <a href="smart_reservations_intelligent_booking_ecosystem.html" class="block text-primary font-semibold">Reservations</a>
                     <a href="visual_gallery_appetite_atmosphere_showcase.html" class="block text-text-secondary">Gallery</a>
                     <a href="about_culinary_heritage_community_story.html" class="block text-text-secondary">About</a>
-                    
                     <a href="contact_hub_comprehensive_communication_center.html" class="block text-text-secondary">Contact</a>
                     <a href="interactive_menu_culinary_discovery_platform.html" class="btn-secondary mt-4 inline-block">View Menu</a>
                 </div>
@@ -103,222 +289,181 @@
         </div>
     </section>
 
-    <!-- Reservation System -->
+    <!-- Enhanced Reservation System -->
     <section class="py-20 px-6 bg-background">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-3 gap-12">
-                <!-- Booking Form -->
-                <div class="lg:col-span-2">
-                    <div class="bg-surface rounded-2xl p-8 shadow-card">
-                        <h2 class="text-3xl font-playfair font-bold text-primary mb-8">Make Your Reservation</h2>
-                        
-                        <form id="reservation-form" class="space-y-6">
-                            <!-- Date and Time Selection -->
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Preferred Date</label>
-                                    <input type="date" id="reservation-date" class="form-input" required />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Preferred Time</label>
-                                    <select id="reservation-time" class="form-input" required>
-                                        <option value>Select time</option>
-                                        <option value="17:00">5:00 PM</option>
-                                        <option value="17:30">5:30 PM</option>
-                                        <option value="18:00">6:00 PM</option>
-                                        <option value="18:30">6:30 PM</option>
-                                        <option value="19:00">7:00 PM</option>
-                                        <option value="19:30">7:30 PM</option>
-                                        <option value="20:00">8:00 PM</option>
-                                        <option value="20:30">8:30 PM</option>
-                                        <option value="21:00">9:00 PM</option>
-                                    </select>
-                                </div>
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-playfair font-bold text-primary mb-4">Create Your Perfect Evening</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">Every detail matters. Let us craft an unforgettable dining experience tailored just for you.</p>
+            </div>
+            
+            <div class="bg-surface rounded-3xl p-8 md:p-12 shadow-2xl">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                
+                <form id="reservation-form" class="space-y-8">
+                    <!-- Step 1: Date and Time -->
+                    <div class="form-step">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-6 text-center">
+                            <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-sm leading-8 mr-3">1</span>
+                            When would you like to dine with us?
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="floating-label">
+                                <input type="date" id="reservation-date" placeholder=" " required />
+                                <label>Choose your special date</label>
                             </div>
-
-                            <!-- Party Size -->
-                            <div>
-                                <label class="block text-sm font-semibold text-primary mb-2">Party Size</label>
-                                <div class="grid grid-cols-4 gap-3">
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="1">1 Guest</button>
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="2">2 Guests</button>
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="3">3 Guests</button>
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="4">4 Guests</button>
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="5">5 Guests</button>
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="6">6 Guests</button>
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="7">7 Guests</button>
-                                    <button type="button" class="party-size-btn p-3 border-2 border-gray-300 rounded-lg text-center hover:border-primary transition-smooth" data-size="8+">8+ Guests</button>
-                                </div>
-                                <input type="hidden" id="party-size" name="party-size" required />
-                            </div>
-
-                            <!-- Special Occasion -->
-                            <div>
-                                <label class="block text-sm font-semibold text-primary mb-2">Special Occasion</label>
-                                <select id="special-occasion" class="form-input">
-                                    <option value>No special occasion</option>
-                                    <option value="anniversary">Anniversary</option>
-                                    <option value="birthday">Birthday</option>
-                                    <option value="business">Business Dinner</option>
-                                    <option value="date">Date Night</option>
-                                    <option value="celebration">General Celebration</option>
-                                    <option value="proposal">Proposal</option>
+                            <div class="floating-label">
+                                <select id="reservation-time" required>
+                                    <option value="">Select your preferred time</option>
+                                    <option value="17:00">5:00 PM - Golden Hour</option>
+                                    <option value="17:30">5:30 PM - Early Evening</option>
+                                    <option value="18:00">6:00 PM - Sunset Dining</option>
+                                    <option value="18:30">6:30 PM - Prime Time</option>
+                                    <option value="19:00">7:00 PM - Classic Hour</option>
+                                    <option value="19:30">7:30 PM - Romantic Hour</option>
+                                    <option value="20:00">8:00 PM - Evening Delight</option>
+                                    <option value="20:30">8:30 PM - Late Dinner</option>
+                                    <option value="21:00">9:00 PM - Night Dining</option>
                                 </select>
-                            </div>
-
-                            <!-- Seating Preferences -->
-                            <div>
-                                <label class="block text-sm font-semibold text-primary mb-2">Seating Preference</label>
-                                <div class="grid md:grid-cols-3 gap-3">
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="seating" value="window" class="text-primary" />
-                                        <span>Window View</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="seating" value="quiet" class="text-primary" />
-                                        <span>Quiet Corner</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="seating" value="chef" class="text-primary" />
-                                        <span>Chef's Counter</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="seating" value="patio" class="text-primary" />
-                                        <span>Patio (Weather Permitting)</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="seating" value="bar" class="text-primary" />
-                                        <span>Bar Seating</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="radio" name="seating" value="no-preference" class="text-primary" checked />
-                                        <span>No Preference</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <!-- Guest Information -->
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">First Name</label>
-                                    <input type="text" id="first-name" class="form-input" required />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Last Name</label>
-                                    <input type="text" id="last-name" class="form-input" required />
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Email Address</label>
-                                    <input type="email" id="email" class="form-input" required />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-primary mb-2">Phone Number</label>
-                                    <input type="tel" id="phone" class="form-input" required />
-                                </div>
-                            </div>
-
-                            <!-- Dietary Restrictions -->
-                            <div>
-                                <label class="block text-sm font-semibold text-primary mb-2">Dietary Restrictions & Allergies</label>
-                                <textarea id="dietary-restrictions" class="form-input h-24" placeholder="Please let us know about any dietary restrictions, allergies, or special requests..."></textarea>
-                            </div>
-
-                            <!-- Special Requests -->
-                            <div>
-                                <label class="block text-sm font-semibold text-primary mb-2">Special Requests</label>
-                                <textarea id="special-requests" class="form-input h-24" placeholder="Any additional requests or notes for your visit..."></textarea>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="pt-6">
-                                <button type="submit" class="btn-primary w-full text-lg py-4">
-                                    <svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                    </svg>
-                                    Confirm Reservation
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Sidebar Information -->
-                <div class="space-y-8">
-                    <!-- Availability Calendar -->
-                    <div class="bg-surface rounded-2xl p-6 shadow-card">
-                        <h3 class="text-xl font-playfair font-bold text-primary mb-4">Popular Times</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between p-3 bg-background rounded-lg">
-                                <span class="font-semibold">Tonight</span>
-                                <span class="text-accent font-semibold">Limited Availability</span>
-                            </div>
-                            <div class="flex items-center justify-between p-3 bg-background rounded-lg">
-                                <span class="font-semibold">Tomorrow</span>
-                                <span class="text-secondary font-semibold">Good Availability</span>
-                            </div>
-                            <div class="flex items-center justify-between p-3 bg-background rounded-lg">
-                                <span class="font-semibold">This Weekend</span>
-                                <span class="text-error font-semibold">Nearly Full</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 p-4 bg-accent-50 rounded-lg">
-                            <p class="text-sm text-accent-800">
-                                <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
-                                </svg>
-                                Book early for weekend dining
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Special Packages -->
-                    <div class="bg-surface rounded-2xl p-6 shadow-card">
-                        <h3 class="text-xl font-playfair font-bold text-primary mb-4">Celebration Packages</h3>
-                        <div class="space-y-4">
-                            <div class="border border-accent-200 rounded-lg p-4">
-                                <h4 class="font-semibold text-primary mb-2">Anniversary Special</h4>
-                                <p class="text-sm text-text-secondary mb-2">Champagne toast, rose petals, special dessert</p>
-                                <span class="text-accent font-bold">+$35</span>
-                            </div>
-                            <div class="border border-secondary-200 rounded-lg p-4">
-                                <h4 class="font-semibold text-primary mb-2">Birthday Celebration</h4>
-                                <p class="text-sm text-text-secondary mb-2">Custom dessert, birthday song, photo</p>
-                                <span class="text-secondary font-bold">+$25</span>
-                            </div>
-                            <div class="border border-primary-200 rounded-lg p-4">
-                                <h4 class="font-semibold text-primary mb-2">Business Dinner</h4>
-                                <p class="text-sm text-text-secondary mb-2">Quiet table, wine selection, receipt</p>
-                                <span class="text-primary font-bold">Complimentary</span>
+                                <label>Time preference</label>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Contact Information -->
-                    <div class="bg-surface rounded-2xl p-6 shadow-card">
-                        <h3 class="text-xl font-playfair font-bold text-primary mb-4">Need Assistance?</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                                </svg>
-                                <span>(555) 123-FOOD</span>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-5 h-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                                </svg>
-                                <span>reservations@savoryhaven.com</span>
-                            </div>
+                    <!-- Step 2: Party Size -->
+                    <div class="form-step">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-6 text-center">
+                            <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-sm leading-8 mr-3">2</span>
+                            How many will be joining you?
+                        </h3>
+                        <div class="party-size-grid">
+                            <button type="button" class="party-btn" data-size="1">
+                                <div class="text-lg font-bold">1</div>
+                                <div class="text-sm">Solo Diner</div>
+                            </button>
+                            <button type="button" class="party-btn" data-size="2">
+                                <div class="text-lg font-bold">2</div>
+                                <div class="text-sm">Intimate Pair</div>
+                            </button>
+                            <button type="button" class="party-btn" data-size="3">
+                                <div class="text-lg font-bold">3</div>
+                                <div class="text-sm">Small Group</div>
+                            </button>
+                            <button type="button" class="party-btn" data-size="4">
+                                <div class="text-lg font-bold">4</div>
+                                <div class="text-sm">Family/Friends</div>
+                            </button>
+                            <button type="button" class="party-btn" data-size="5">
+                                <div class="text-lg font-bold">5</div>
+                                <div class="text-sm">Small Party</div>
+                            </button>
+                            <button type="button" class="party-btn" data-size="6">
+                                <div class="text-lg font-bold">6</div>
+                                <div class="text-sm">Gathering</div>
+                            </button>
+                            <button type="button" class="party-btn" data-size="7">
+                                <div class="text-lg font-bold">7</div>
+                                <div class="text-sm">Group Dining</div>
+                            </button>
+                            <button type="button" class="party-btn" data-size="8+">
+                                <div class="text-lg font-bold">8+</div>
+                                <div class="text-sm">Large Party</div>
+                            </button>
                         </div>
-                        <div class="mt-4">
-                            <a href="contact_hub_comprehensive_communication_center.html" class="btn-secondary w-full text-center">Contact Us</a>
+                        <input type="hidden" id="party-size" name="party-size" required />
+                    </div>
+
+                    <!-- Step 3: Special Occasion & Seating -->
+                    <div class="form-step">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-6 text-center">
+                            <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-sm leading-8 mr-3">3</span>
+                            What's the occasion?
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="floating-label">
+                                <select id="special-occasion">
+                                    <option value="">Regular dining</option>
+                                    <option value="anniversary">💕 Anniversary</option>
+                                    <option value="birthday">🎂 Birthday Celebration</option>
+                                    <option value="business">💼 Business Dinner</option>
+                                    <option value="date">🌹 Romantic Date</option>
+                                    <option value="celebration">🎉 Special Celebration</option>
+                                    <option value="proposal">💍 Marriage Proposal</option>
+                                </select>
+                                <label>Special occasion</label>
+                            </div>
+                            <div class="floating-label">
+                                <select id="seating-preference">
+                                    <option value="no-preference">No preference</option>
+                                    <option value="window">🌅 Window View</option>
+                                    <option value="quiet">🤫 Quiet Corner</option>
+                                    <option value="chef">👨‍🍳 Chef's Counter</option>
+                                    <option value="patio">🌿 Patio (Weather Permitting)</option>
+                                    <option value="bar">🍷 Bar Seating</option>
+                                </select>
+                                <label>Seating preference</label>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Step 4: Guest Information -->
+                    <div class="form-step">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-6 text-center">
+                            <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-sm leading-8 mr-3">4</span>
+                            Tell us about yourself
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="floating-label">
+                                <input type="text" id="first-name" placeholder=" " required />
+                                <label>First Name</label>
+                            </div>
+                            <div class="floating-label">
+                                <input type="text" id="last-name" placeholder=" " required />
+                                <label>Last Name</label>
+                            </div>
+                            <div class="floating-label">
+                                <input type="email" id="email" placeholder=" " required />
+                                <label>Email Address</label>
+                            </div>
+                            <div class="floating-label">
+                                <input type="tel" id="phone" placeholder=" " required />
+                                <label>Phone Number</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Special Requests -->
+                    <div class="form-step">
+                        <h3 class="text-2xl font-playfair font-bold text-primary mb-6 text-center">
+                            <span class="inline-block w-8 h-8 bg-primary text-white rounded-full text-sm leading-8 mr-3">5</span>
+                            Any special requests?
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="floating-label">
+                                <textarea id="dietary-restrictions" rows="3" placeholder=" "></textarea>
+                                <label>Dietary restrictions & allergies</label>
+                            </div>
+                            <div class="floating-label">
+                                <textarea id="special-requests" rows="3" placeholder=" "></textarea>
+                                <label>Special requests or notes</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-8 text-center">
+                        <button type="submit" class="submit-btn">
+                            <svg class="w-6 h-6 inline mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+                            </svg>
+                            Reserve Your Perfect Evening
+                        </button>
+                        <p class="text-sm text-text-secondary mt-4">We'll confirm your reservation within 15 minutes</p>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -339,7 +484,7 @@
                         <div>
                             <label class="block text-sm font-semibold text-primary mb-2">Party Size</label>
                             <select class="form-input" required>
-                                <option value>Select size</option>
+                                <option value="">Select size</option>
                                 <option value="1">1 Guest</option>
                                 <option value="2">2 Guests</option>
                                 <option value="3">3 Guests</option>
@@ -422,8 +567,6 @@
                     <p class="opacity-90">Full-service coordination</p>
                 </div>
             </div>
-            
-            
         </div>
     </section>
 
@@ -466,7 +609,6 @@
                     <ul class="space-y-2">
                         <li><a href="interactive_menu_culinary_discovery_platform.html" class="text-gray-300 hover:text-accent transition-smooth">Menu</a></li>
                         <li><a href="smart_reservations_intelligent_booking_ecosystem.html" class="text-gray-300 hover:text-accent transition-smooth">Reservations</a></li>
-                        
                         <li><a href="visual_gallery_appetite_atmosphere_showcase.html" class="text-gray-300 hover:text-accent transition-smooth">Gallery</a></li>
                         <li><a href="about_culinary_heritage_community_story.html" class="text-gray-300 hover:text-accent transition-smooth">Our Story</a></li>
                     </ul>
@@ -512,29 +654,55 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Party size selection
-        document.querySelectorAll('.party-size-btn').forEach(btn => {
+        // Party size selection with enhanced interactivity
+        document.querySelectorAll('.party-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 // Remove active class from all buttons
-                document.querySelectorAll('.party-size-btn').forEach(b => {
-                    b.classList.remove('border-primary', 'bg-primary-50', 'text-primary');
-                    b.classList.add('border-gray-300');
+                document.querySelectorAll('.party-btn').forEach(b => {
+                    b.classList.remove('active');
                 });
                 
                 // Add active class to clicked button
-                this.classList.remove('border-gray-300');
-                this.classList.add('border-primary', 'bg-primary-50', 'text-primary');
+                this.classList.add('active');
                 
                 // Set hidden input value
                 document.getElementById('party-size').value = this.dataset.size;
+                
+                // Update progress bar
+                updateProgress();
             });
+        });
+
+        // Progress bar update function
+        function updateProgress() {
+            const steps = ['reservation-date', 'reservation-time', 'party-size', 'first-name', 'email'];
+            let completed = 0;
+            
+            steps.forEach(stepId => {
+                const element = document.getElementById(stepId);
+                if (element && element.value && element.value.trim() !== '') {
+                    completed++;
+                }
+            });
+            
+            const progress = (completed / steps.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+        }
+
+        // Add event listeners for progress tracking
+        ['reservation-date', 'reservation-time', 'first-name', 'last-name', 'email', 'phone'].forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('input', updateProgress);
+                element.addEventListener('change', updateProgress);
+            }
         });
 
         // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('reservation-date').setAttribute('min', today);
 
-        // Form submission
+        // Enhanced form submission with emotional feedback
         document.getElementById('reservation-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -544,27 +712,31 @@
             
             // Validate party size
             if (!document.getElementById('party-size').value) {
-                alert('Please select your party size.');
+                alert('Please select your party size to complete your reservation.');
                 return;
             }
             
-            // Show success message
-            alert('Reservation request submitted successfully! We will confirm your booking within 15 minutes via email and SMS.');
+            // Show enhanced success message
+            const firstName = document.getElementById('first-name').value;
+            const date = document.getElementById('reservation-date').value;
+            const time = document.getElementById('reservation-time').value;
             
-            // Reset form
+            alert(`🎉 Wonderful, ${firstName}! Your reservation for ${new Date(date).toLocaleDateString()} at ${time} has been submitted. We're already excited to serve you and will confirm your perfect evening within 15 minutes. Check your email and phone for updates!`);
+            
+            // Reset form with animation
             this.reset();
+            document.getElementById('progress-fill').style.width = '0%';
             
             // Reset party size buttons
-            document.querySelectorAll('.party-size-btn').forEach(btn => {
-                btn.classList.remove('border-primary', 'bg-primary-50', 'text-primary');
-                btn.classList.add('border-gray-300');
+            document.querySelectorAll('.party-btn').forEach(btn => {
+                btn.classList.remove('active');
             });
         });
 
         // Waitlist form submission
         document.getElementById('waitlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('You have been added to our waitlist! We will notify you as soon as a table becomes available.');
+            alert('🎯 Perfect! You\'ve been added to our priority waitlist. We\'ll reach out the moment a table opens up for your preferred time!');
             this.reset();
         });
 
@@ -578,6 +750,15 @@
                 nav.classList.remove('bg-background');
                 nav.classList.add('bg-background/95');
             }
+        });
+
+        // Initialize form animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stagger form step animations
+            const steps = document.querySelectorAll('.form-step');
+            steps.forEach((step, index) => {
+                step.style.animationDelay = `${index * 0.1}s`;
+            });
         });
     </script>
 </body>
