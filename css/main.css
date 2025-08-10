@@ -2428,3 +2428,36 @@ h1, h2, h3, h4, h5, h6 {
   filter: blur(0);
 }
 
+/* --- Typing Animation --- */
+.typing-animation {
+  overflow: hidden;              /* Ensures text is hidden until "typed" */
+  white-space: nowrap;           /* Keeps it on one line */
+  border-right: 3px solid var(--color-primary); /* Cursor effect */
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* --- Count Up Animation --- */
+.count-up {
+  font-weight: bold;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.count-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: gives a nice fade-in rise effect */
+
