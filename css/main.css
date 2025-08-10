@@ -2461,3 +2461,116 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Optional: gives a nice fade-in rise effect */
 
+/* Mobile Button Alignment Fixes */
+@media (max-width: 768px) {
+    /* Hero Section Buttons */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        width: 100%;
+    }
+    
+    /* All buttons in mobile should be full width and consistent */
+    .btn-primary, 
+    .btn-secondary, 
+    .btn-accent {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.875rem 1.5rem !important;
+        min-height: 48px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+    
+    /* Quick Contact Cards - Make buttons consistent */
+    .card .btn-primary,
+    .card .btn-secondary,
+    .card .btn-accent {
+        width: 100% !important;
+        margin-top: 1rem;
+    }
+    
+    /* Location Section Button Fixes */
+    .space-y-3 {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .space-y-3 .btn-primary,
+    .space-y-3 .btn-secondary {
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    /* Emergency Contact Button Fixes */
+    .emergency-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .emergency-buttons a {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 1rem !important;
+    }
+    
+    /* Form buttons */
+    .form button[type="submit"] {
+        width: 100% !important;
+        padding: 1rem 1.5rem !important;
+    }
+    
+    /* Fix for social media buttons in mobile */
+    .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+    
+    /* Contact form improvements */
+    .contact-form .grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Newsletter form button */
+    .newsletter-form button {
+        width: 100% !important;
+        padding: 0.875rem 1.5rem !important;
+    }
+}
+
+/* Additional mobile-specific fixes */
+@media (max-width: 640px) {
+    /* Hero section button container */
+    .hero-section .flex {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+    }
+    
+    /* Make sure all button text doesn't break */
+    .btn-primary, .btn-secondary, .btn-accent {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Emergency section specific fix */
+    .emergency-contact .flex {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    /* Ensure proper spacing for mobile */
+    .card {
+        padding: 1.5rem 1rem !important;
+    }
+}
