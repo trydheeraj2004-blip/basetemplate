@@ -600,34 +600,105 @@
     </section>
 
     <!-- Emergency Contact -->
-    <section class="py-16 px-6 bg-surface">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="bg-background rounded-2xl p-8 shadow-card">
-                <div class="flex items-center justify-center mb-4">
-                    <svg class="w-8 h-8 text-warning mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
-                    </svg>
-                    <h3 class="text-2xl font-playfair font-bold text-primary scroll-animate-rise">Same-Day Changes & Emergencies</h3>
-                </div>
-                <p class="text-text-secondary mb-6 scroll-animate-blur">Need to modify your reservation or have an urgent request? We're here to help with same-day changes and special circumstances.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="tel:+15551234663" class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-smooth inline-flex items-center justify-center">
-                        <svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                        </svg>
-                        Emergency Line: (555) 123-1234
-                    </a>
-                    <a href="sms:+15551234663" class="btn-secondary">
-                        <svg class="w-5 h-5 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"/>
-                        </svg>
-                        Text Us
-                    </a>
-                </div>
-                <p class="text-sm text-text-secondary mt-4 scroll-animate-blur">Available during business hours for immediate assistance</p>
+<section class="py-16 px-6 bg-surface">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="bg-background rounded-2xl p-8 shadow-card">
+            <div class="flex items-center justify-center mb-4">
+                <svg class="w-8 h-8 text-warning mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                <h3 class="text-2xl font-playfair font-bold text-primary scroll-animate-rise">Same-Day Changes & Emergencies</h3>
             </div>
+            <p class="text-text-secondary mb-6 scroll-animate-blur">Need to modify your reservation or have an urgent request? We're here to help with same-day changes and special circumstances.</p>
+            
+            <!-- Fixed button container for mobile alignment -->
+            <div class="emergency-buttons flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+15551234663" class="emergency-btn bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-smooth inline-flex items-center justify-center w-full sm:w-auto">
+                    <svg class="w-5 h-5 inline mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    <span class="whitespace-nowrap">Emergency Line: (555) 123-1234</span>
+                </a>
+                <a href="sms:+15551234663" class="emergency-btn btn-secondary w-full sm:w-auto inline-flex items-center justify-center">
+                    <svg class="w-5 h-5 inline mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Text Us</span>
+                </a>
+            </div>
+            
+            <p class="text-sm text-text-secondary mt-4 scroll-animate-blur">Available during business hours for immediate assistance</p>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+/* Emergency Contact Button Fixes */
+@media (max-width: 768px) {
+    .emergency-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
+        width: 100%;
+    }
+    
+    .emergency-btn {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 1rem 1.5rem !important;
+        min-height: 48px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .emergency-btn span {
+        text-align: center;
+        flex: 1;
+    }
+    
+    .emergency-btn svg {
+        margin-right: 0.5rem;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .emergency-buttons {
+        gap: 0.75rem !important;
+    }
+    
+    .emergency-btn {
+        font-size: 0.875rem !important;
+        padding: 0.875rem 1rem !important;
+    }
+    
+    /* Handle long text on very small screens */
+    .emergency-btn .whitespace-nowrap {
+        white-space: normal !important;
+        text-align: center !important;
+    }
+}
+
+/* Desktop styles remain the same */
+@media (min-width: 769px) {
+    .emergency-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1rem !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .emergency-btn {
+        width: auto !important;
+        min-width: 200px !important;
+    }
+}
+</style>
+
 
     <!-- Footer -->
     <footer class="bg-text-primary text-white py-16 px-6">
