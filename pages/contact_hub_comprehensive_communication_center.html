@@ -922,15 +922,38 @@
                 this.style.height = this.scrollHeight + 'px';
             });
         }
-        // Directions Button Functionality
+        // Enhanced Directions Button with Auto-Coordinate Extraction
 document.addEventListener('DOMContentLoaded', () => {
     const directionsBtn = document.getElementById('directions-btn');
     
     if (directionsBtn) {
         directionsBtn.addEventListener('click', function() {
-            // Coordinates for House Of Chefs location - YOU CAN CHANGE THESE VALUES
-            const destinationLat = 17.352943346540094;  // Replace with your latitude
-            const destinationLng = 78.35745341713009;   // Replace with your longitude
+            let destinationLat, destinationLng;
+            
+            // Try to extract coordinates from the iframe first
+            const iframe = document.querySelector('iframe[src*="google.com/maps/embed"]');
+            if (iframe) {
+                const src = iframe.src;
+                // Extract coordinates from Google Maps embed URL
+                const latMatch = src.match(/!3d([0-9.-]+)/);
+                const lngMatch = src.match(/!2d([0-9.-]+)/);
+                
+                if (latMatch && lngMatch) {
+                    destinationLat = parseFloat(latMatch[1]);
+                    destinationLng = parseFloat(lngMatch[1]);
+                    console.log('Coordinates extracted from iframe:', destinationLat, destinationLng);
+                } else {
+                    // Fallback to manual coordinates if extraction fails
+                    destinationLat = 17.441633201243036;  // Your new latitude
+                    destinationLng = 78.35487847369065;   // Your new longitude
+                    console.log('Using fallback coordinates:', destinationLat, destinationLng);
+                }
+            } else {
+                // Fallback coordinates if no iframe found
+                destinationLat = 17.441633201243036;  // Your new latitude
+                destinationLng = 78.35487847369065;   // Your new longitude
+                console.log('No iframe found, using fallback coordinates:', destinationLat, destinationLng);
+            }
             
             // Check if user is on mobile device
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
